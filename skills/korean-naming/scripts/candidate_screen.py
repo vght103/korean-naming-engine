@@ -206,10 +206,11 @@ def render(args, rows, ctx, suri_info, a, stats, stat_paths, tally, pool, cands)
         snd = " / ".join(ns.seq_str(sound_seq(c["hangul"], sc)) for sc in SCHOOLS)
         st = stats.get(c["hangul"]) if stats else None
         st_s = "%d / %d · %s" % (st[0], st[1], lean(*st)) if st else "-"
-        o.append("| %d | **오%s %s%s** | %d·%d·%d | %d %s | %d %s | %d %s | %d %s | %s | %s | %s | %s·%s | %s / %s | %s |" % (
+        gy = ["%d %s %s" % (n[k], ctx.suri[ns.reduce81(n[k])]["name"].split("(")[0], s["grades"][k])
+              for k in ("원", "형", "이", "정")]
+        o.append("| %d | **오%s %s%s** | %d·%d·%d | %s | %s | %s | %s | %s | %s | %s | %s·%s | %s / %s | %s |" % (
             i, c["hangul"], SURNAME, c["hanja"], a, rb["wonhoek"], rc["wonhoek"],
-            n["원"], s["grades"]["원"], n["형"], s["grades"]["형"], n["이"], s["grades"]["이"],
-            n["정"], s["grades"]["정"], s["yy"], ns.seq_str(hk), snd,
+            gy[0], gy[1], gy[2], gy[3], s["yy"], ns.seq_str(hk), snd,
             rb["radical_ohaeng"] or "-", rc["radical_ohaeng"] or "-",
             ns.short_hun(rb), ns.short_hun(rc), st_s))
         bad = [k for k, v in ck.items() if not v]
