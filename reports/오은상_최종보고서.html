@@ -34,7 +34,7 @@
     margin-bottom: 40px; position: relative; overflow: hidden;
   }
   .cover::before {
-    content: '寅 午 戌 — 三合火局';
+    content: '元 亨 利 貞';
     position: absolute; top: 20px; left: 0; right: 0;
     font-size: 18px; letter-spacing: 8px; opacity: 0.15;
   }
@@ -144,12 +144,31 @@
 
   <!-- COVER -->
   <div class="cover">
-    <div class="subtitle">신생아 작명 최종 분석 보고서</div>
+    <div class="subtitle">신생아 작명 분석 보고서 (출생 전 조건부)</div>
     <h1>오 은 상</h1>
     <div class="hanja-title">吳 垠 尙</div>
-    <div class="subtitle">획수 배합 7 · 9 · 8 &nbsp;|&nbsp; 정격 24획 입신격(立身格)</div>
-    <div class="subtitle" style="margin-top:8px; color:var(--accent);">2026년 丙午年 · 말(馬)띠 · 寅午戌 삼합 가족</div>
-    <div class="date">작성일: 2026년 3월 &nbsp;|&nbsp; 척척만세력 교차검증 완료</div>
+    <div class="subtitle">원획 7 · 9 · 8 &nbsp;|&nbsp; 사격 원17 · 형16 · 이15 · 정24 — 모두 吉</div>
+    <div class="subtitle" style="margin-top:8px; color:var(--accent);">2026년 丙午年 · 말(馬)띠 · 월주는 출생 시각에 따라 戊戌 / 己亥 / 庚子</div>
+    <div class="date">초판 2026년 3월 &nbsp;|&nbsp; 개정 2026-10-01 (재현 가능한 계산 도구로 재확인)</div>
+  </div>
+
+  <!-- 개정 내역 -->
+  <div class="alert alert-info" style="margin:0 0 28px;">
+    <strong>개정 내역 (2026-10-01)</strong>
+    초판(2026년 3월)을 외부 재검토 메모(<code>docs/클로드용_작명재검토_메모.md</code>)와 재현 가능한 계산 도구로 다시 확인해 아래를 고쳤습니다. 화면 디자인과 장(PART) 구성은 그대로 두었습니다.
+    <ul style="margin:8px 0 0; padding-left:20px;">
+      <li><b>사격 공식 교정</b>: 원격 = 이름 두 글자(B+C), 형격 = 성 + 이름 첫 자(A+B)로 고쳤습니다(초판은 원·형이 뒤바뀜). 오은상 = <b>원격 17 건창격 · 형격 16 덕망격 · 이격 15 통솔격 · 정격 24 입신격, 모두 吉</b>. 길흉은 3단계(吉 / 반길반흉 / 凶)만 쓰고 '大吉' 표기를 없앴습니다. 15의 격명 '복수격' → '통솔격'.</li>
+      <li><b>아이 사주</b>: 11월 전체를 己亥月로 '확정'한 표를 삭제하고, 절입 시각 기준 <b>출생 시나리오(戊戌 / 己亥 / 庚子)</b>로 바꿨습니다. 丙은 연간(年干)이지 일간이 아니며, 일주·시주는 미정입니다.</li>
+      <li><b>가족 오행 '합산' 행 삭제</b>: 서로 다른 사람의 명식 글자 수를 한 명식처럼 더할 수 없습니다.</li>
+      <li><b>'癸丙 합화' 삭제</b>: 천간합은 甲己·乙庚·丙辛·丁壬·戊癸 다섯 쌍뿐이며, 癸→丙은 水克火입니다. 寅午戌은 가족 띠를 모은 <b>상징적 서술</b>로 낮추고 '최상급·최고의 삼합' 표현을 지웠습니다(표지 배경 문구 '三合火局'도 '元亨利貞'으로 교체).</li>
+      <li><b>부모 월령 용어</b>: 癸水 午月 '사지(死地)' → 12운성 절(絶)·왕상휴수사 囚(수).</li>
+      <li><b>한자</b>: 垠의 원뜻을 '땅가장자리·끝·지경'으로 바로잡고 '큰 언덕', '끝없이 넓은 땅'을 뜻에서 뺐습니다. 尙은 <b>U+5C19</b>(尚 U+5C1A 아님)로 명시했습니다. 출처를 확인할 수 없는 '한국작명학회' 인용을 삭제했습니다.</li>
+      <li><b>'吳垠尙이 유일 (전수 탐색 검증 완료)' 삭제</b> → 재현 가능한 전수 탐색 수치와 정확한 진술로 바꿨습니다(PART 5).</li>
+      <li><b>삼층 오행</b>: 吳의 자원오행을 土 → 水(다수설, 이설 있음)로 고치고, '세 층위 모두 상극 없음'과 사주 개수에 더하는 식의 서술을 고쳤습니다. 火 조절 해석은 출생 시나리오에 따른 조건부로 바꿨습니다.</li>
+      <li><b>별점 종합 평가 삭제</b> → 사실 확인 항목과 해석 항목을 나눈 정성 평가. <b>寅·卯時 추천 등 출생 시간대 유불리 삭제</b> → 분 단위 기록 안내(분만은 의료진 판단).</li>
+      <li><b>부모 시주 제외(출생 시각 미상, 삼주 기준)</b>: 부모님의 출생 시각은 시간대만 전해지고 분 단위로는 알 수 없어, 전해진 시간대가 30분 보정 시지 경계에 걸칩니다. 그래서 부모 사주는 시주를 빼고 연·월·일 삼주(三柱)로 봅니다(사용자 결정 2026-10-01). 겉글자 6자 오행은 아버지 木0 · 火2 · 土0 · 金1 · 水3, 어머니 木2 · 火1 · 土2 · 金1 · 水0입니다. 어머니 '未 중기 乙 뿌리' 문장과 부모 시간(時干) 비교(丙辛 합 등)를 삭제했습니다. 아이의 일주·시주는 출생 후 계산합니다.</li>
+      <li><b>추가</b>: 이름 사용 통계('은상' 남아 약 89%, 2008–2019)와 동음어(銀賞) 참고. 바닥글의 '척척만세력 교차검증 완료' 문구를 재현 가능한 도구 경로로 바꿨습니다.</li>
+    </ul>
   </div>
 
   <!-- PART 1: 부모 정보 -->
@@ -162,16 +181,16 @@
       <div class="info-card">
         <div class="label">생년월일</div>
         <div class="value">1990. 06. 27</div>
-        <div class="detail">양력 기준 · 음력 윤5월 5일</div>
+        <div class="detail">양력 기준 · 음력 1990년 윤5월 5일</div>
       </div>
       <div class="info-card">
         <div class="label">출생시 · 띠</div>
-        <div class="value">戌時 · 말(午)띠</div>
-        <div class="detail">19:00~21:00 · 庚午年</div>
+        <div class="value">시각 미상 · 말(午)띠</div>
+        <div class="detail">戌時 무렵이라는 전언뿐(미확정) · 시주 제외 · 庚午年</div>
       </div>
     </div>
 
-    <h4>사주 四柱 (척척만세력 검증 완료)</h4>
+    <h4>사주 — 삼주(三柱) 기준 (연·월·일주: 결정론적 계산으로 재검증 · 시주: 출생 시각 미상으로 제외)</h4>
     <div class="saju-grid">
       <div class="pillar">
         <div class="pillar-label">年柱</div>
@@ -188,18 +207,19 @@
         <div class="stem">癸</div><div class="branch">亥</div>
         <div class="element">水 · 水</div>
       </div>
-      <div class="pillar">
-        <div class="pillar-label">時柱</div>
-        <div class="stem">壬</div><div class="branch">戌</div>
-        <div class="element">水 · 土</div>
+      <div class="pillar" style="opacity:0.4;">
+        <div class="pillar-label">時柱 (제외)</div>
+        <div class="stem">—</div><div class="branch">—</div>
+        <div class="element">제외 — 출생 시각 미상</div>
       </div>
     </div>
+    <p style="font-size:13px; color:var(--text-light);">출생 시각 미상(시간대만 전해짐)으로 시주는 분석에서 제외하고 삼주 기준으로 봅니다. 전해진 시간대(戌時 무렵)는 30분 보정 시지 경계에 걸쳐 있어 辛酉時와 壬戌時 중 하나로 정할 수 없습니다. 일주 癸亥는 일 경계(23:30)와 멀어 전해진 시간대 어디서든 같습니다.</p>
     <div class="alert alert-warning">
-      <strong>아버지 오행 분포 (월령 기준 분석)</strong>
-      글자 수: 木 0 · 火 2 · 土 1 · 金 1 · 水 4<br>
-      <b>단, 午月(한여름) 출생으로 水는 사지(死地) — 글자는 많으나 실질적 힘이 약합니다.</b><br>
-      강한 여름 火에 의해 水가 증발하는 구조. 일간 癸水(작은 물)가 午月의 뙤약볕에서 힘을 쓰지 못합니다.<br>
-      → <b>실질 부족: 水·木</b> / 실질 과다: <b>火</b> / 용신: 金·水
+      <strong>아버지 오행 분포 (월령 기준 해석)</strong>
+      겉글자 6자(삼주, 시주 제외): 木 0 · 火 2 · 土 0 · 金 1 · 水 3.<br>
+      <b>午月(한여름) 출생: 왕상휴수사로 午月의 水는 囚(수), 12운성으로 癸는 午에서 절(絶)입니다.</b> (12운성은 양순음역 통설 기준이며, 음양동생동사설로는 癸가 午에서 태(胎), 亥에서 건록입니다.) 글자 수는 많지만 실질 힘은 약하다고 봅니다(해석). 초판의 '사지(死地)'는 틀린 표현입니다(午月에 死가 되는 오행은 金).<br>
+      일지 亥는 癸의 12운성 제왕(통설)으로 일간을 돕는 뿌리이지만, 午午의 火를 감당하기에는 부족하다고 보는 해석입니다.<br>
+      → (해석) 실질 부족: <b>水·木</b> / 실질 과다: <b>火</b> / 용신: 金·水 — 시주 제외 삼주 기준 해석이며, 유파·판단 방식에 따라 다를 수 있습니다.
     </div>
 
     <div class="divider"></div>
@@ -209,16 +229,16 @@
       <div class="info-card">
         <div class="label">생년월일</div>
         <div class="value">1994. 06. 17</div>
-        <div class="detail">양력 기준 · 음력 5월 9일</div>
+        <div class="detail">양력 기준 · 음력 1994년 5월 9일</div>
       </div>
       <div class="info-card">
         <div class="label">출생시 · 띠</div>
-        <div class="value">未時 · 개(戌)띠</div>
-        <div class="detail">13:00~15:00 · 甲戌年</div>
+        <div class="value">시각 미상 · 개(戌)띠</div>
+        <div class="detail">未時 무렵이라는 전언뿐(미확정) · 시주 제외 · 甲戌年</div>
       </div>
     </div>
 
-    <h4>사주 四柱 (척척만세력 검증 완료)</h4>
+    <h4>사주 — 삼주(三柱) 기준 (연·월·일주: 결정론적 계산으로 재검증 · 시주: 출생 시각 미상으로 제외)</h4>
     <div class="saju-grid">
       <div class="pillar">
         <div class="pillar-label">年柱</div>
@@ -235,34 +255,35 @@
         <div class="stem">甲</div><div class="branch">戌</div>
         <div class="element">木 · 土</div>
       </div>
-      <div class="pillar">
-        <div class="pillar-label">時柱</div>
-        <div class="stem">辛</div><div class="branch">未</div>
-        <div class="element">金 · 土</div>
+      <div class="pillar" style="opacity:0.4;">
+        <div class="pillar-label">時柱 (제외)</div>
+        <div class="stem">—</div><div class="branch">—</div>
+        <div class="element">제외 — 출생 시각 미상</div>
       </div>
     </div>
+    <p style="font-size:13px; color:var(--text-light);">출생 시각 미상(시간대만 전해짐)으로 시주는 분석에서 제외하고 삼주 기준으로 봅니다. 전해진 시간대(未時 무렵)는 30분 보정 시지 경계에 걸쳐 있어 庚午時와 辛未時 중 하나로 정할 수 없습니다. 일주 甲戌은 전해진 시간대 어디서든 같습니다.</p>
     <div class="alert alert-warning">
-      <strong>어머니 오행 분포 (월령 기준 분석)</strong>
-      글자 수: 木 2 · 火 1 · 土 3 · 金 2 · 水 0<br>
-      <b>午月(한여름) 출생으로 甲木이 火를 생하느라 기운이 소진(설기)됩니다.</b><br>
-      地支에 木의 뿌리(寅·卯)가 없고, 庚·辛 金이 木을 극하며, 水가 0개라 金→木 극을 중재할 통관(通關)도 없습니다.<br>
-      → <b>실질 부족: 水·木</b> / 실질 과다: <b>土</b> / 용신: 水·木
+      <strong>어머니 오행 분포 (월령 기준 해석)</strong>
+      겉글자 6자(삼주, 시주 제외): 木 2 · 火 1 · 土 2 · 金 1 · 水 0.<br>
+      <b>午月(한여름) 출생: 甲木이 火를 생하느라 기운을 내주는 설기(泄氣)의 계절입니다. 왕상휴수사로 木은 休, 12운성으로 甲은 午에서 사(死)입니다.</b><br>
+      삼주 지지(戌·午·戌)에는 寅·卯·亥·未 등 木의 뿌리가 없습니다(戌 지장간은 辛·丁·戊). 甲木이 뿌리 없는(無根) 상태라 木이 약하다는 해석이 분명합니다. 庚金이 甲木을 극하고, 水가 없어 金→木 극을 중재할 통관(通關)이 없다고 봅니다(해석).<br>
+      → (해석) 실질 부족: <b>水·木</b> / 실질 강: <b>土</b>(戌 2자, 午月 土相) / 용신: 水·木 — 시주 제외 삼주 기준 해석이며, 유파·판단 방식에 따라 다를 수 있습니다.
     </div>
 
     <div class="divider"></div>
 
-    <h3>부모 오행 분석 (월령 기준)</h3>
+    <h3>부모 오행 분석 (월령 기준 해석)</h3>
     <table>
-      <thead><tr><th>구분</th><th>글자 수</th><th>월령 기준 실질</th><th>공통점</th></tr></thead>
+      <thead><tr><th>구분</th><th>글자 수 (삼주 6자)</th><th>월령 기준 실질 (해석)</th><th>공통점</th></tr></thead>
       <tbody>
-        <tr><td style="font-weight:600;">아버지</td><td>水4 / 木0</td><td><b>水 약(午月 사지), 木 부재</b></td><td rowspan="2" style="vertical-align:middle; background:var(--accent-light);"><b>둘 다<br>水·木 부족</b></td></tr>
-        <tr><td style="font-weight:600;">어머니</td><td>土3 / 水0</td><td><b>水 부재, 木 약(설기)</b></td></tr>
+        <tr><td style="font-weight:600;">아버지</td><td>水3 / 木0</td><td><b>水 약(午月 囚, 癸 절), 木 겉글자 없음</b></td><td rowspan="2" style="vertical-align:middle; background:var(--accent-light);"><b>둘 다<br>水·木이 약한 경향</b></td></tr>
+        <tr><td style="font-weight:600;">어머니</td><td>土2 / 水0</td><td><b>水 없음, 木 약(午月 설기, 甲 사, 지지에 木 뿌리 없음)</b></td></tr>
       </tbody>
     </table>
-    <div class="alert alert-danger">
-      <strong>부모 공통 약점: 水·木 부족</strong>
-      두 분 모두 午月(한여름) 출생이라는 공통점이 있습니다. 여름은 火가 가장 강하고 水가 가장 약한 계절입니다. 아버지는 水 글자가 많지만 여름 火에 증발하여 실질적으로 약하고, 어머니는 아예 水가 없습니다. 木 역시 아버지는 부재, 어머니는 설기로 약합니다.<br><br>
-      → 부부가 서로의 부족을 완전히 보완하는 구조는 아니며, <b>水·木이 가족 전체의 공통 약점</b>입니다. 이름을 통해 이를 보완하는 것이 더욱 중요합니다.
+    <div class="alert alert-warning">
+      <strong>부모 공통 경향 (해석): 水·木 약</strong>
+      두 분 모두 午月(한여름) 출생입니다. 왕상휴수사로 午月은 火旺 · 土相 · 木休 · 水囚 · 金死의 계절이라, 水와 木이 힘을 얻기 어렵다고 봅니다. 아버지는 水 글자가 많지만 囚에 놓이고, 어머니는 水가 겉글자에 없습니다. 木은 아버지 겉글자에 없고, 어머니는 설기로 약하다고 봅니다.<br><br>
+      → 이는 월령 중심 해석이며, 용신 판단은 유파에 따라 다를 수 있습니다. <b>아이는 일주·시주가 미정이므로 부모의 결론을 아이에게 그대로 옮기지 않습니다</b>(PART 2).
     </div>
   </div>
 
@@ -275,12 +296,12 @@
       <div class="info-card" style="text-align:center;">
         <div class="label">출생년</div>
         <div class="value">2026</div>
-        <div class="detail">丙午年 (병오년)</div>
+        <div class="detail">丙午年 (병오년) · 연주 확정</div>
       </div>
       <div class="info-card" style="text-align:center; border: 2px solid var(--accent);">
         <div class="label">예상 출생월</div>
         <div class="value">11월</div>
-        <div class="detail">己亥月 (기해월)</div>
+        <div class="detail">입동(11-07 18:52) 전 戊戌月 · 후 己亥月</div>
       </div>
       <div class="info-card" style="text-align:center;">
         <div class="label">띠</div>
@@ -289,17 +310,17 @@
       </div>
     </div>
 
-    <h3>확정 사주 (연주 + 월주)</h3>
+    <h3>출생 시나리오 — 연주는 확정, 월주는 절입 시각으로</h3>
     <div class="saju-grid">
       <div class="pillar">
         <div class="pillar-label">年柱 (확정)</div>
         <div class="stem">丙</div><div class="branch">午</div>
         <div class="element">火 · 火</div>
       </div>
-      <div class="pillar">
-        <div class="pillar-label">月柱 (11월)</div>
-        <div class="stem">己</div><div class="branch">亥</div>
-        <div class="element">土 · 水</div>
+      <div class="pillar" style="opacity:0.6;">
+        <div class="pillar-label">月柱 (시나리오)</div>
+        <div class="stem">?</div><div class="branch">?</div>
+        <div class="element">절입 시각에 따라 戊戌·己亥·庚子</div>
       </div>
       <div class="pillar" style="opacity:0.4;">
         <div class="pillar-label">日柱 (미정)</div>
@@ -309,34 +330,47 @@
       <div class="pillar" style="opacity:0.4;">
         <div class="pillar-label">時柱 (미정)</div>
         <div class="stem">?</div><div class="branch">?</div>
-        <div class="element">출생시에 따라</div>
+        <div class="element">출생 시각에 따라</div>
       </div>
     </div>
 
+    <p>연주 丙午는 2026-02-04 05:02 입춘부터 2027-02-04 10:46 입춘 전까지 같으므로 확정입니다. 월주는 양력 월이 아니라 <b>절입 시각</b>으로 정합니다.</p>
+    <table>
+      <thead><tr><th>출생 구간 (KST)</th><th>월주</th><th>연·월 겉글자 4자 오행</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>10-08 15:29 ~ 11-07 18:52</td><td><b>戊戌</b></td><td>火2 土2 (木0 金0 水0)</td><td style="text-align:left;">午戌 반합(火). 戌 지장간 辛·丁·戊 (金 숨음). 戌月은 土旺 / 秋金 해석이 갈림</td></tr>
+        <tr style="background:var(--accent-light);"><td>11-07 18:52 ~ 12-07 11:53</td><td><b>己亥</b></td><td>火2 土1 水1 (木0 金0)</td><td style="text-align:left;">亥 지장간 戊·甲·壬 (木 숨음). 亥月은 水旺, 丙은 亥에서 절(絶)</td></tr>
+        <tr><td>12-07 11:53 이후</td><td><b>庚子</b></td><td>火2 金1 水1 (木0 土0)</td><td style="text-align:left;">子午 충</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--text-light);">2026 절입 시각(KST): 한로 10-08 15:29 (계산 15:29:17, KASI 공표값 미확인) · <b>입동 11-07 18:52</b> (KASI 공표, 계산 18:52:04) · <b>대설 12-07 11:53</b> (KASI 공표, 계산 11:52:31). 계산값은 pyerfa 정밀 계산이며 DE421 독립 계산과 1초 안에서 맞습니다. 절입 전후 1분 안에 태어나면 초까지 확인해 <code>saju_calc.py</code>로 판정합니다(예: 11-07 18:52:00 출생은 아직 戊戌月). 10-08 15:29 이전이면 丁酉月입니다. 10~12월 일주·월주표: <code>skills/korean-naming/references/daily_pillars_2026.md</code>.</p>
+
     <div class="alert alert-warning">
-      <strong>확정 오행 분석 (연주 + 월주만)</strong>
-      木 <b>0</b> · 火 <b>2</b> · 土 <b>1</b> · 金 <b>0</b> · 水 <b>1</b><br>
-      丙午年은 天干·地支 모두 火로, <b>火 기운이 매우 강합니다.</b> 반면 木과 金이 부재합니다.<br>
-      → 이름에서 金을 보충하고, 일주·시주에서 木이 보완되기를 기대합니다.
+      <strong>지금 말할 수 있는 것과 없는 것</strong>
+      • <b>丙은 연간(年干)이지 일간(日干)이 아닙니다.</b> 아이의 일간 강약과 용신은 일주가 정해져야 판단할 수 있습니다. 초판의 '확정 오행 (木0 · 金0)'은 11월 전체를 己亥月로 가정한 연·월 겉글자 4자 집계였고, 이를 근거로 '火 기운이 매우 강하다', '木·金 부재'라고 단정한 것은 오류입니다.<br>
+      • 위 개수는 <b>연·월 겉글자 4자만</b> 센 값입니다. 일주·시주 4자와 지장간이 빠져 있으므로 "木 0 · 金 0"을 전체 사주의 결핍으로 확대하지 않습니다(己亥月이면 亥 속에 甲木, 戊戌月이면 戌 속에 辛金이 있습니다).<br>
+      • 火의 강약도 시나리오에 따라 다릅니다. 戊戌月이면 午戌 반합으로 火가 강해지는 쪽이고, 己亥月이면 亥月 水旺 · 火死(丙은 亥에서 절)라 '火 과다'는 성립하기 어렵습니다.<br>
+      • 작명 방향(가설): 시나리오마다 다릅니다 — 戊戌月이면 水(조후)·金 쪽 해석이 커지고, 己亥·庚子月(水旺)이면 水 추가 필요성이 줄어 火·木을 보는 해석도 가능합니다. 이름의 사주 보완 가치는 출생 후 일주·시주를 계산해 다시 평가합니다.
     </div>
 
-    <h3>가족 전체 오행 합산</h3>
+    <h3>가족 구성원별 겉글자 오행 (참고 — 합산하지 않음)</h3>
     <table>
       <thead><tr><th>구성원</th><th>木</th><th>火</th><th>土</th><th>金</th><th>水</th></tr></thead>
       <tbody>
-        <tr><td>아버지</td><td>0</td><td>2</td><td>1</td><td>1</td><td>4</td></tr>
-        <tr><td>어머니</td><td>2</td><td>1</td><td>3</td><td>2</td><td>0</td></tr>
-        <tr><td>아이 (확정분)</td><td>0</td><td>2</td><td>1</td><td>0</td><td>1</td></tr>
-        <tr style="background:var(--accent-light);font-weight:700;"><td>합산</td><td>2</td><td>5</td><td>5</td><td>3</td><td>5</td></tr>
+        <tr><td>아버지 (6자, 삼주 · 시주 제외)</td><td>0</td><td>2</td><td>0</td><td>1</td><td>3</td></tr>
+        <tr><td>어머니 (6자, 삼주 · 시주 제외)</td><td>2</td><td>1</td><td>2</td><td>1</td><td>0</td></tr>
+        <tr><td>아이 — 戊戌月 시나리오 (4자)</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
+        <tr><td>아이 — 己亥月 시나리오 (4자)</td><td>0</td><td>2</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>아이 — 庚子月 시나리오 (4자)</td><td>0</td><td>2</td><td>0</td><td>1</td><td>1</td></tr>
       </tbody>
     </table>
-    <p>글자 수로는 고르게 보이지만, <b>월령 기준으로 보면 가족 전체가 水·木이 실질적으로 약한 구조</b>입니다. 부모 모두 午月(한여름) 출생으로 水의 힘이 약하고, 아이 역시 丙午年 쌍화로 火가 과다합니다. 이름에서 金(吳·尙)을 보충하고, 생활 속에서 水·木을 적극 보완하는 것이 중요합니다.</p>
+    <p>초판에 있던 '합산' 행은 삭제했습니다. 사주의 오행 개수는 한 사람의 명식 안에서만 의미가 있으므로, 부모와 아이의 글자 수를 더해 한 명식처럼 다루지 않습니다. 부모는 시주를 뺀 삼주 6자, 아이는 연·월 4자라 개수의 기준도 다릅니다. 부모 두 분이 水·木이 약한 경향이라는 것은 각자의 월령 해석이며(PART 1), 아이의 사주 판단은 출생 후에 따로 합니다.</p>
   </div>
 
   <!-- PART 3: 띠 궁합 -->
   <div class="section">
     <div class="section-number">PART 3</div>
-    <h2>띠 궁합 — 寅午戌 삼합 가족</h2>
+    <h2>띠 — 寅午戌 (가족 띠의 상징적 서술)</h2>
 
     <div class="grid-3">
       <div class="info-card" style="text-align:center;">
@@ -357,37 +391,38 @@
     </div>
 
     <div class="big-result">
-      <div class="label">삼합(三合)</div>
+      <div class="label">삼합(三合) — 상징</div>
       <div class="value">寅 午 戌</div>
-      <div class="sub">범 · 말 · 개 — 火局을 이루는 최고의 삼합</div>
+      <div class="sub">범 · 말 · 개 — 火의 삼합 (가족 띠를 모은 상징적 서술)</div>
     </div>
 
     <h4>아버지(午) ↔ 아이(午): 같은 말띠</h4>
-    <p>같은 띠끼리는 성향과 가치관이 비슷하여 서로에 대한 이해도가 높습니다. 寅午戌 삼합에서 午-午 동기(同氣)를 이루며, 부자 간 유대감이 강한 관계입니다. 다만 火 기운이 겹치므로 서로 불꽃이 튈 수 있는 면도 있어, 상호 존중이 중요합니다.</p>
+    <p>아버지와 아이는 같은 午띠입니다. 전통 띠 풀이에서는 같은 띠를 성향이 비슷하다고 풀기도 하지만, 이는 해석이며 띠만으로 부자 관계나 성격을 정하지 않습니다.</p>
 
-    <h4>어머니(戌) ↔ 아이(午): 삼합 관계</h4>
-    <p>개(戌)띠와 말(午)띠는 <b>寅午戌 삼합</b>의 핵심 구성원으로, 띠 궁합에서 <b>최상급</b>입니다. 서로를 자연스럽게 돕고 조화를 이루는 관계로, 어머니와 아이 사이에 깊은 정서적 유대가 형성됩니다.</p>
+    <h4>어머니(戌) ↔ 아이(午)</h4>
+    <p>戌과 午는 寅午戌 삼합에 함께 속하는 글자라, 전통 띠 풀이에서는 좋은 관계로 봅니다(해석). 초판의 '띠 궁합 최상급' 같은 단정 표현은 근거가 없어 지웠습니다.</p>
 
-    <div class="alert alert-success">
-      <strong>가족 전체: 午(아버지) + 戌(어머니) + 午(아이)</strong>
-      寅午戌 삼합 중 午와 戌이 이미 갖춰져 있어 <b>火局(화국)</b>을 형성합니다. 활기차고 열정적인 가정을 이루며, 가족 구성원 간 자연스러운 조화가 이루어지는 구조입니다. 범(寅) 기운은 양가 할아버지(친할아버지·장인어른 모두 寅띠)가 채워줍니다.
+    <div class="alert alert-info">
+      <strong>가족 띠: 午(아버지) · 戌(어머니) · 午(아이) + 寅(친할아버지·외할아버지)</strong>
+      가족 구성원의 띠를 모으면 寅·午·戌이 모두 나옵니다(양가 할아버지 띠는 가족 전언 기준). 이는 <b>가족 띠를 모은 상징적 서술</b>이며, 한 사람의 명식 안에서 이루어지는 삼합이 아닙니다. 가족의 성격·관계·운에 대한 명리적 효과를 주장하지 않습니다.
     </div>
 
     <div class="divider"></div>
 
-    <h3>부모-자녀 사주 궁합 (월령 기준)</h3>
+    <h3>부모-자녀 겉글자 비교 (상징적 참고)</h3>
+    <p style="font-size:13px; color:var(--text-light);">아래는 부모의 <b>일간</b>과 아이의 <b>연간</b> 丙 한 쌍을 비교한 것입니다. 서로 다른 사람의 명식 글자끼리 대조하는 것 자체가 해석 영역이며, 실제 비교는 아이 일간이 확정된 뒤 다시 합니다.</p>
 
-    <h4>아버지(癸水) ↔ 아이(丙火)</h4>
-    <p>아버지 일간 癸水와 아이 연간 丙火는 표면적으로 水克火 상극이지만, 사주에서 癸(음수)와 丙(양화)은 <b>癸丙 합화(合化)</b>의 특수 관계로, 만나면 오히려 조화를 이룹니다. 아버지가 자녀의 강한 火를 부드럽게 다스려주는 관계입니다.</p>
+    <h4>아버지(일간 癸水) ↔ 아이(연간 丙火)</h4>
+    <p>오행으로는 <b>水克火</b>, 곧 癸가 丙을 극하는 관계입니다. 십신으로는 癸 기준 丙 = 정재(正財), 丙 기준 癸 = 정관(正官)입니다. <b>癸丙은 천간합이 아닙니다.</b> 천간합은 甲己 · 乙庚 · 丙辛 · 丁壬 · 戊癸 다섯 쌍뿐이며, 癸의 합 짝은 戊, 丙의 합 짝은 辛입니다. 초판의 '癸丙 합화' 서술은 삭제했습니다.</p>
 
-    <h4>어머니(甲木) ↔ 아이(丙火)</h4>
-    <p>어머니 일간 甲木과 아이 연간 丙火는 <b>木生火</b>의 상생 관계입니다. 어머니가 아이에게 기운을 불어넣어주는 최상의 궁합입니다. 甲木이 丙火를 키우는 관계로, 어머니의 지지와 응원이 아이 성장에 큰 힘이 됩니다.</p>
+    <h4>어머니(일간 甲木) ↔ 아이(연간 丙火)</h4>
+    <p>오행으로는 <b>木生火</b>, 곧 甲이 丙을 생하는 관계입니다. 십신으로는 甲 기준 丙 = 식신(食神), 丙 기준 甲 = 편인(偏印)입니다. 이 역시 아이의 연간과 비교한 상징적 관계이며, '최상의 궁합' 같은 평가는 하지 않습니다.</p>
 
-    <div class="alert alert-success">
-      <strong>부모-자녀 궁합 종합</strong>
-      어머니(甲木)→아이(丙火): 木生火 상생으로 최상의 모자 궁합.<br>
-      아버지(癸水)→아이(丙火): 癸丙 합화의 특수 관계로 부드러운 조화.<br>
-      가족 전체가 寅午戌 삼합의 火局을 이루면서도, 부모 각각이 아이와 좋은 관계를 형성합니다.
+    <div class="alert alert-info">
+      <strong>부모-자녀 겉글자 비교 정리 (참고)</strong>
+      어머니 甲 → 아이 丙: 木生火 (甲 기준 식신).<br>
+      아버지 癸 → 아이 丙: 水克火 (癸 기준 정재) — 천간합 아님.<br>
+      (참고) 아버지 월간 壬 ↔ 아이 연간 丙: 丙壬 충 / 어머니 월간 庚 ↔ 아이 연간 丙: 火克金(丙이 庚을 극함). 부모 시주는 출생 시각 미상으로 제외했으므로 시간(時干) 비교는 하지 않습니다.
     </div>
   </div>
 
@@ -400,17 +435,17 @@
       <div class="info-card" style="text-align:center;">
         <div class="label">성씨</div>
         <div class="value" style="font-size:36px;">吳</div>
-        <div class="detail">나라이름 오 · 7획</div>
+        <div class="detail">성씨·나라이름 오 · 원획 7</div>
       </div>
       <div class="info-card" style="text-align:center;">
         <div class="label">이름 첫 글자</div>
         <div class="value" style="font-size:36px;">垠</div>
-        <div class="detail">언덕 은 · 9획</div>
+        <div class="detail">땅가장자리 은 · 원획 9</div>
       </div>
       <div class="info-card" style="text-align:center;">
         <div class="label">이름 둘째 글자</div>
         <div class="value" style="font-size:36px;">尙</div>
-        <div class="detail">숭상할 상 · 8획</div>
+        <div class="detail">오히려·숭상할 상 · 원획 8</div>
       </div>
     </div>
 
@@ -419,96 +454,134 @@
       <thead><tr><th>한자</th><th>훈음</th><th>의미</th><th>부수</th><th>원획수</th><th>획수오행</th></tr></thead>
       <tbody>
         <tr>
-          <td style="font-family:'Noto Serif KR';font-size:20px;font-weight:700;">吳</td>
-          <td>나라이름 오</td><td>성씨 (오나라)</td><td>口</td><td><b>7획</b></td>
+          <td style="font-family:'Noto Serif KR';font-size:20px;font-weight:700;">吳<br><span style="font-size:11px;font-weight:400;color:var(--text-light);">U+5433</span></td>
+          <td>성씨·나라이름 오</td><td>성씨 (오나라)</td><td>口</td><td><b>7획</b></td>
           <td><span class="tag tag-gold">金</span></td>
         </tr>
         <tr>
-          <td style="font-family:'Noto Serif KR';font-size:20px;font-weight:700;">垠</td>
-          <td>언덕 은</td><td>끝, 경계, 대지의 끝<br>넓은 포부와 한계 없는 가능성</td><td>土</td><td><b>9획</b></td>
+          <td style="font-family:'Noto Serif KR';font-size:20px;font-weight:700;">垠<br><span style="font-size:11px;font-weight:400;color:var(--text-light);">U+57A0</span></td>
+          <td>땅가장자리·끝·지경 은</td><td><b>원뜻</b>: 땅의 가장자리, 끝, 경계(지경), 물가<br><span style="font-size:12px;color:var(--text-light);">일부 자전에 '언덕'이 부차적 훈으로 실림<br>〈작명 풀이〉 땅끝까지 이르는 넓은 시야와 포부 — 풀이이며 원뜻 아님</span></td><td>土</td><td><b>9획</b></td>
           <td><span class="tag tag-blue">水</span></td>
         </tr>
         <tr>
-          <td style="font-family:'Noto Serif KR';font-size:20px;font-weight:700;">尙</td>
-          <td>숭상할 상</td><td>높이다, 숭상하다<br>고귀함과 지향을 상징</td><td>小(변형)</td><td><b>8획</b></td>
+          <td style="font-family:'Noto Serif KR';font-size:20px;font-weight:700;">尙<br><span style="font-size:11px;font-weight:400;color:var(--text-light);">U+5C19</span></td>
+          <td>오히려·숭상할 상</td><td>오히려, 숭상하다, 높이다<br><span style="font-size:12px;color:var(--text-light);">〈작명 풀이〉 고귀함과 지향 — 풀이</span></td><td>小</td><td><b>8획</b></td>
           <td><span class="tag tag-gold">金</span></td>
         </tr>
       </tbody>
     </table>
+    <p style="font-size:13px; color:var(--text-light);">이름 풀이 예: "땅끝(垠)까지 높이 받들어지다(尙)" — 작명 풀이(해석)입니다. 초판의 "큰 언덕", "끝없이 넓은 땅"은 어느 자료에도 원뜻으로 나오지 않아 뜻에서 뺐습니다. '끝없음'을 뜻하는 無垠은 "가장자리가 없다"는 부정 표현입니다.</p>
 
-    <h3>垠(언덕 은)에 대한 불용문자 소문과 진실</h3>
+    <div class="alert alert-info">
+      <strong>자형 주의 — 尙(U+5C19)과 尚(U+5C1A)은 다른 코드</strong>
+      한국 표준 부호계(KS X 1001)와 대법원 인명용 목록에 오른 형태는 <b>尙(U+5C19)</b>이며, 교육용 기초한자이기도 합니다. 尚(U+5C1A)은 중국·일본 자형으로, Unihan에 한국 독음·인명용 표지가 없습니다. 출생신고와 각종 서류에는 <b>尙(U+5C19)</b>을 씁니다. 입력기·글꼴에 따라 두 글자가 비슷하게 보이므로 코드포인트로 확인하는 편이 안전합니다.
+    </div>
+
+    <h3>垠과 불용문자(不用文字) 논란</h3>
     <div class="alert alert-warning">
-      <strong>소문: "垠은 경계·끝을 의미하여 이름에 쓰면 흉하다"</strong>
-      일부 작명가들이 垠의 뜻 중 "경계, 끝"에 주목하여 "종말, 한계를 암시하는 불용문자"라고 주장합니다.
+      <strong>주장: "垠은 경계·끝을 뜻하므로 이름에 쓰면 좋지 않다"</strong>
+      垠의 뜻 가운데 '경계, 끝'을 들어 이름에 피해야 한다는 이야기가 일부에서 언급됩니다. 다만 이 주장의 원문 출처는 확인하지 못했습니다.
     </div>
     <div class="alert alert-success">
-      <strong>진실: 근거 없는 확대 해석</strong>
-      한국작명학회 등에서는 이러한 류의 주장을 <b>"사이비 불용문자"</b>로 규정합니다. 전통적 불용문자는 死·亡·凶처럼 뜻 자체가 흉한 글자에 한정되는데, 현대 일부 작명가들이 영업 수단으로 그 범위를 무분별하게 확대한 것입니다. 같은 논리라면 "上(위)"도 "더 올라갈 곳이 없다"로 해석할 수 있습니다. 垠의 본래 의미는 <b>"대지의 경계, 끝없이 넓은 땅"</b>으로, 무한한 가능성을 상징하는 긍정적 글자입니다. 대법원 인명용 한자에 정식 등록되어 있으며, 실제 작명에서도 사용되고 있습니다.
+      <strong>확인된 사실과 참고 의견</strong>
+      • <b>공인된 불용문자 목록은 없습니다.</b> 작명가·작명원마다 목록과 이유가 다르며(수십~수백 자), 기원은 『禮記』·『左傳』의 명명 금기("不以國, 不以日月, 不以隱疾, 不以山川" 등)로 설명됩니다.<br>
+      • 이번에 확인한 불용문자 목록들(검색 결과 요약 기준)에는 <b>垠이 없었습니다.</b><br>
+      • 垠은 대법원 인명용 한자에 '은'으로 등재되어 있습니다(Unihan 인명용 표지 기준).<br>
+      • (의견) 일부 작명가·칼럼은 불용문자 자체를 근거 없는 속설로 봅니다(예: 매일신문 [성명학 이야기] 「불용문자와 숫자」, 2007-12-27). 이는 칼럼니스트 개인의 견해입니다.<br>
+      초판의 "한국작명학회 등에서 '사이비 불용문자'로 규정" 문구는 출처를 확인할 수 없어 삭제했습니다. 垠을 쓸지는 뜻(땅가장자리·끝·지경)을 알고 가족이 판단할 문제입니다.
     </div>
 
     <div class="alert alert-info">
-      <strong>발음 안전성 검증</strong>
-      垠 = "은" (정확), 尙 = "상" (정확). 昕(흔)처럼 잘못 읽힐 위험이 없으며, 두 글자 모두 대법원 인명용 한자에 등록된 한자입니다.
+      <strong>발음·등재 확인</strong>
+      垠 = '은', 尙 = '상': 대법원 인명용 한자의 지정 발음과 일치합니다(Unihan kHangul 표지 — 垠 은:0N, 尙 상:0E). 垠은 교육용 기초한자가 아니라 처음 보는 사람에게 설명이 필요할 수 있습니다. 이 프로젝트의 한자 데이터는 대법원 2018년 목록까지 반영하므로(2024-06-11 시행 확대분 9,389자는 미반영), <b>출생신고 직전 대법원 인명용 한자 조회로 자형과 지정 발음을 다시 확인</b>합니다.
     </div>
+
+    <h3>실사용 참고 — '은상'의 사용 통계와 연상</h3>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>출생신고 누적 (2008–2019)</td><td style="text-align:left;">'은상' <b>남 375 / 여 45 → 남아 약 89%</b> (남아 공동 929위). 드물고 남아 쪽 이름입니다.</td></tr>
+        <tr><td>최근 인기 이름</td><td style="text-align:left;">2025 출생신고 상위권(도윤·서윤 등)에는 없습니다(잠정치 보도 기준).</td></tr>
+        <tr><td>동음어</td><td style="text-align:left;"><b>銀賞</b>(은상, 2등상)·恩賞(임금이 내리는 상)과 같은 소리입니다. "금상 아닌 은상" 같은 농담의 소지가 있습니다.</td></tr>
+        <tr><td>인물 연상</td><td style="text-align:left;">시조시인 이은상(李殷相)이 있어 고전적·남성적인 인상이 있습니다.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--text-light);">통계 출처: randkid/name 데이터(대법원 전자가족관계등록시스템 '선호하는 출생자 이름 현황' 2008~2019년 합산).</p>
   </div>
 
-  <!-- PART 5: 오격 수리 -->
+  <!-- PART 5: 사격 수리 -->
   <div class="section">
     <div class="section-number">PART 5</div>
-    <h2>오격(五格) 수리 분석</h2>
+    <h2>사격(四格) 수리 분석 — 원형이정</h2>
 
+    <p style="font-size:13px; color:var(--text-light);">성 A = 吳 7, 이름 첫 자 B = 垠 9, 이름 끝 자 C = 尙 8 (원획). 시기 배당은 통용 기준이며 자료마다 다릅니다.</p>
     <table>
       <thead><tr><th>격</th><th>공식</th><th>계산</th><th>획수</th><th>격명</th><th>길흉</th></tr></thead>
       <tbody>
         <tr>
-          <td><b>원격</b> (초년운)</td><td>A + B</td><td>7 + 9</td><td><b>16획</b></td><td>덕망격(德望格)</td>
-          <td><span class="tag tag-green" style="background:#065f46;color:#fff;">大吉</span></td>
-        </tr>
-        <tr>
-          <td><b>형격</b> (중년운)</td><td>B + C</td><td>9 + 8</td><td><b>17획</b></td><td>건창격(健昌格)</td>
+          <td><b>원격</b> (초년운, ~20대)</td><td>B + C</td><td>9 + 8</td><td><b>17획</b></td><td>건창격(健暢格)</td>
           <td><span class="tag tag-green">吉</span></td>
         </tr>
         <tr>
-          <td><b>이격</b> (말년운)</td><td>A + C</td><td>7 + 8</td><td><b>15획</b></td><td>복수격(福壽格)</td>
-          <td><span class="tag tag-green" style="background:#065f46;color:#fff;">大吉</span></td>
+          <td><b>형격</b> (청장년운, 20~40대)<br><span style="font-size:12px;color:var(--text-light);">성명의 중심</span></td><td>A + B</td><td>7 + 9</td><td><b>16획</b></td><td>덕망격(德望格)</td>
+          <td><span class="tag tag-green">吉</span></td>
+        </tr>
+        <tr>
+          <td><b>이격</b> (중년운, 40~60대)</td><td>A + C</td><td>7 + 8</td><td><b>15획</b></td><td>통솔격(統率格)</td>
+          <td><span class="tag tag-green">吉</span></td>
         </tr>
         <tr style="background:var(--accent-light);">
-          <td><b>정격</b> (총운)</td><td>A + B + C</td><td>7 + 9 + 8</td><td><b>24획</b></td><td>입신격(立身格)</td>
-          <td><span class="tag tag-green" style="background:#065f46;color:#fff;">大吉</span></td>
+          <td><b>정격</b> (총운, 말년 포함)</td><td>A + B + C</td><td>7 + 9 + 8</td><td><b>24획</b></td><td>입신격(立身格)</td>
+          <td><span class="tag tag-green">吉</span></td>
         </tr>
       </tbody>
     </table>
+    <p style="font-size:13px; color:var(--text-light);">
+      • <b>공식 교정</b>: 초판은 원격 = A+B, 형격 = B+C로 계산했는데, 한국 주류 원형이정 공식과 원격·형격이 뒤바뀌어 있었습니다. 네 수(15·16·17·24)는 그대로이고 격 이름표만 바뀝니다(초판: 원16 · 형17 · 이15 · 정24).<br>
+      • <b>등급</b>: 길흉은 정본 수리표(<code>skills/korean-naming/references/suri_table.md</code>, 吉 39 · 반길반흉 3(51·71·77) · 凶 39)의 <b>3단계</b>만 씁니다. 大吉·大凶 세분은 자료마다 달라 재현할 수 없으므로 쓰지 않습니다. 15·16·17·24는 대조한 모든 81수리 자료에서 吉입니다.<br>
+      • <b>격명</b>: 15는 '통솔격'이 채택명입니다(초판의 '복수격'은 운 이름 '복수운'에서 온 별칭).<br>
+      • <b>음양</b>: 7·9·8 = 양·양·음으로 순양·순음이 아닙니다.<br>
+      • <b>오윤하와 비교</b>: 오윤하 吳昀河(7·8·9)와는 네 수의 집합(15·16·17·24)과 원격 17 · 정격 24가 같고, 형격·이격이 서로 바뀝니다(오은상 형16 · 이15, 오윤하 형15 · 이16).<br>
+      • <b>사격과 오격</b>: 이 표는 사격 네 개를 평가한 것입니다. 일본 구마사키식 오격과 대응시키면 형격 = 인격(A+B), 원격 = 지격(B+C), 정격 = 총격이며, 천격과 일본식 외격은 따로 평가하지 않았습니다(외자 성에 영수 +1을 쓰는 유파에서는 외격이 9가 되어 통용표의 흉수 — 유파 의존). 그래서 '오격 모두 길'이라고 부르지 않습니다.
+    </p>
 
     <div class="big-result">
       <div class="label">정격 (총운)</div>
       <div class="value">24획 입신격(立身格)</div>
-      <div class="sub">大吉 — 재물운이 좋고 입신출세하는 수</div>
+      <div class="sub">吉 — 전통 풀이: 맨손으로 재물을 모아 입신하는 수</div>
     </div>
 
     <div class="alert alert-success">
-      <strong>사격(四格) 전부 길수 — 흉수 없음!</strong>
-      16(大吉) · 17(吉) · 15(大吉) · 24(大吉). "오은상" 발음을 유지하면서 입신격(24)이 포함되고 사격에 흉수가 없는 한자 조합은 <b>吳垠尙이 유일</b>합니다 (전수 탐색 검증 완료).
+      <strong>사격 모두 吉 — 흉수 없음</strong>
+      17 건창격(吉) · 16 덕망격(吉) · 15 통솔격(吉) · 24 입신격(吉).<br><br>
+      <b>전수 탐색 결과</b> (Unihan 인명용 2018 목록 기준, <code>name_search.py</code> 전수 탐색, 반길반흉은 길로 세지 않음):<br>
+      • 吳 + 은 + 상: 인명용 한자 은 34자 × 상 43자 = <b>1,462개 조합</b> 가운데 사격이 모두 吉인 조합은 <b>182개(획수 쌍 19쌍)</b>입니다.<br>
+      • <b>정격 24이면서 사격 모두 吉인 은·상 조합은 획수쌍 9·8뿐이며, 이 쌍의 한자 조합은 吳垠尙·吳垠牀·吳垠狀 세 개입니다. 뜻으로는 尙이 가장 적합합니다.</b> 정격 24가 되는 은·상 조합은 모두 17개(획수 쌍 7·10, 9·8, 10·7, 14·3)이고, 그중 네 격이 모두 吉인 것이 9·8 쌍의 3개입니다. 牀은 '평상 상', 狀은 '형상 상'이면서 '문서 장'으로도 읽힙니다.<br>
+      • 24가 어느 격에든 들어가면 되는 해석으로는 <b>유일하지 않습니다</b>: 사격 가운데 하나라도 24이면서 네 격이 모두 吉인 은·상 조합은 69개(획수 쌍 7쌍: 9·8, 10·14, 14·10, 14·17, 16·8, 17·8, 17·14)입니다.<br>
+      • 실무 참고 조합(네 격 모두 吉 + 두 글자 모두 KS X 1001 수록 또는 교육용 기초한자 + 원획 확인 권장 플래그 없음)은 40개이며, 吳垠尙은 그중 하나입니다.<br>
+      따라서 초판의 "吳垠尙이 유일 (전수 탐색 검증 완료)"은 쓰지 않습니다. 정격 24 조건에서 유일한 것은 획수 쌍 9·8입니다. 전수표: <code>docs/전수탐색/오은상_조합표.md</code> (표는 뜻·불용문자를 판단하지 않음).
     </div>
 
-    <h3>각 격의 운세 해설</h3>
+    <h3>각 격의 전통 풀이</h3>
     <div class="grid-2">
       <div class="info-card">
-        <div class="label">원격 16획 · 덕망격</div>
-        <div class="detail" style="color:var(--text);margin-top:8px;">인덕이 두텁고 주변의 존경을 받는 수. 어린 시절부터 두루 사랑받으며 성장합니다.</div>
+        <div class="label">원격 17획 · 건창격 · 초년운</div>
+        <div class="detail" style="color:var(--text);margin-top:8px;">강한 의지로 난관을 돌파하는 수로 풉니다. 강직함은 조절이 필요하다고 봅니다.</div>
       </div>
       <div class="info-card">
-        <div class="label">형격 17획 · 건창격</div>
-        <div class="detail" style="color:var(--text);margin-top:8px;">강인한 의지와 결단력으로 큰 뜻을 이루는 수. 중년기에 독립적 리더십을 발휘합니다.</div>
+        <div class="label">형격 16획 · 덕망격 · 청장년운 (성명의 중심)</div>
+        <div class="detail" style="color:var(--text);margin-top:8px;">후덕하여 인망과 재록이 따르는 수로 풉니다.</div>
       </div>
       <div class="info-card">
-        <div class="label">이격 15획 · 복수격</div>
-        <div class="detail" style="color:var(--text);margin-top:8px;">복(福)과 장수(壽)를 모두 누리는 대길한 수. 말년이 평안하고 가정이 화목합니다.</div>
+        <div class="label">이격 15획 · 통솔격 · 중년운</div>
+        <div class="detail" style="color:var(--text);margin-top:8px;">덕망과 통솔력, 복록·장수를 뜻하는 수로 풉니다.</div>
       </div>
       <div class="info-card">
-        <div class="label">정격 24획 · 입신격</div>
-        <div class="detail" style="color:var(--text);margin-top:8px;">재물운이 뛰어나고 사회적으로 입신출세하는 수. 풍요롭고 성공적인 삶의 기반입니다.</div>
+        <div class="label">정격 24획 · 입신격 · 총운</div>
+        <div class="detail" style="color:var(--text);margin-top:8px;">맨손으로 재물을 모아 입신하는 수로 풉니다.</div>
       </div>
     </div>
+    <p style="font-size:13px; color:var(--text-light);">위 풀이는 성명학 전통 해석이며, 이름이 건강·재물·성격을 결정한다는 검증된 사실이 아닙니다. 연령 배당도 자료마다 다릅니다(예: 원격 ~20세 또는 ~30세).</p>
   </div>
 
   <!-- PART 6: 삼층 오행 -->
@@ -516,7 +589,12 @@
     <div class="section-number">PART 6</div>
     <h2>삼층 오행(五行) 분석</h2>
 
-    <h3>① 획수 오행</h3>
+    <div class="alert alert-info">
+      <strong>읽는 법 — 세 가지는 서로 다른 분류법</strong>
+      획수오행(원획 끝자리), 자원오행(부수·글자 뜻), 발음오행(초성)은 같은 글자를 서로 다르게 분류합니다. 예컨대 垠은 획수로는 水, 부수로는 土입니다. 그래서 세 결과를 하나로 합치지 않고, <b>아이 사주의 오행 개수에 더하지도 않습니다</b>(초판의 "金 보충" 식 서술 수정).
+    </div>
+
+    <h3>① 획수 오행 (원획 끝자리)</h3>
     <div class="flow">
       <div class="flow-item"><span class="tag tag-gold">金</span> 吳 7획</div>
       <div class="flow-arrow">→</div>
@@ -527,28 +605,33 @@
     <table>
       <thead><tr><th>관계</th><th>오행</th><th>판정</th></tr></thead>
       <tbody>
-        <tr><td>吳 → 垠</td><td>金 → 水</td><td><span class="tag tag-green">금생수(金生水) 상생 ✓</span></td></tr>
-        <tr><td>垠 → 尙</td><td>水 → 金</td><td><span class="tag tag-gold">비조화 (상극 아님)</span></td></tr>
+        <tr><td>吳 → 垠</td><td>金 → 水</td><td><span class="tag tag-green">금생수(金生水) 상생</span></td></tr>
+        <tr><td>垠 → 尙</td><td>水 → 金</td><td><span class="tag tag-gold">역생 (金生水의 역방향, 상극 아님)</span></td></tr>
       </tbody>
     </table>
 
-    <h3>② 자원 오행 (부수 기반)</h3>
+    <h3>② 자원 오행 (부수 기반) — 이름 두 글자 중심</h3>
     <div class="flow">
-      <div class="flow-item"><span class="tag tag-gold">土</span> 吳 (口)</div>
+      <div class="flow-item"><span class="tag tag-blue">水</span> 吳 (口) · 참고</div>
       <div class="flow-arrow">→</div>
       <div class="flow-item"><span class="tag tag-gold">土</span> 垠 (土)</div>
       <div class="flow-arrow">→</div>
-      <div class="flow-item"><span class="tag tag-gold">金</span> 尙</div>
+      <div class="flow-item"><span class="tag tag-gold">金</span> 尙 (小)</div>
     </div>
     <table>
       <thead><tr><th>관계</th><th>오행</th><th>판정</th></tr></thead>
       <tbody>
-        <tr><td>吳 → 垠</td><td>土 → 土</td><td><span class="tag tag-green">비화(比和) 안정 ✓</span></td></tr>
-        <tr><td>垠 → 尙</td><td>土 → 金</td><td><span class="tag tag-green">토생금(土生金) 상생 ✓</span></td></tr>
+        <tr><td><b>垠 → 尙</b> (이름 두 글자)</td><td>土 → 金</td><td><span class="tag tag-green">토생금(土生金) 상생</span></td></tr>
+        <tr><td>吳 → 垠 (참고)</td><td>水 → 土</td><td><span class="tag tag-gold">土克水 (吳=水 다수설 기준) — 참고만</span></td></tr>
       </tbody>
     </table>
+    <p style="font-size:13px; color:var(--text-light);">
+      • 자원오행 평가는 <b>이름 두 글자</b>를 중심으로 합니다. 垠(土부)은 土로 이견이 없고, 이름 안에서는 垠(土) → 尙(金)의 <b>土生金 상생</b>입니다.<br>
+      • 尙(小부)의 자원오행은 <b>불확실</b>합니다. 小부는 작명 DB에서 金/水로 갈리며, 尙을 金으로 보는 자료를 따랐습니다. 水로 보는 자료를 따르면 垠 → 尙은 土克水가 됩니다.<br>
+      • <b>吳 자원오행 이설</b>: 吳(口부)는 水가 다수설이고 木·土로 보는 자료도 있습니다. 초판은 土로 적었으나 다수설에 맞춰 水로 고쳤습니다. 성씨 자원오행은 자료마다 달라 흐름 판정에는 참고만 합니다(水로 보면 吳 → 垠은 土克水, 木으로 보면 木克土, 土로 보면 비화).
+    </p>
 
-    <h3>③ 음령 오행 (발음 초성 기반)</h3>
+    <h3>③ 발음(음령) 오행 (초성 기반)</h3>
     <div class="flow">
       <div class="flow-item"><span class="tag tag-gold">土</span> 오 (ㅇ)</div>
       <div class="flow-arrow">→</div>
@@ -559,128 +642,117 @@
     <table>
       <thead><tr><th>관계</th><th>오행</th><th>판정</th></tr></thead>
       <tbody>
-        <tr><td>오 → 은</td><td>土 → 土</td><td><span class="tag tag-green">비화(比和) 안정 ✓</span></td></tr>
-        <tr><td>은 → 상</td><td>土 → 金</td><td><span class="tag tag-green">토생금(土生金) 상생 ✓</span></td></tr>
+        <tr><td>오 → 은</td><td>土 → 土</td><td><span class="tag tag-green">비화(比和)</span></td></tr>
+        <tr><td>은 → 상</td><td>土 → 金</td><td><span class="tag tag-green">토생금(土生金) 상생</span></td></tr>
       </tbody>
     </table>
+    <p style="font-size:13px; color:var(--text-light);">운해본 계열(현행 작명계 다수, ㅇㅎ = 土, ㅅㅈㅊ = 金) 기준입니다. 훈민정음 해례본 기준(ㅇㅎ = 水)이면 水 · 水 · 金(金生水의 역방향, 상극 없음)이 됩니다. 어느 쪽으로 보아도 상극은 없습니다.</p>
 
     <div class="alert alert-success">
-      <strong>세 가지 오행 분석 모두에서 상극(相剋) 관계 없음!</strong>
-      획수·자원·음령 세 층위 어디에서도 상극이 발생하지 않습니다.
+      <strong>세 분류법 요약</strong>
+      • 획수오행: 金 · 水 · 金 — 상극 없음.<br>
+      • 발음오행: 土 · 土 · 金(운해본) / 水 · 水 · 金(해례본) — 어느 쪽이든 상극 없음.<br>
+      • 자원오행: 이름 두 글자 垠(土) → 尙(金) 土生金 상생. 다만 尙의 자원오행은 자료마다 갈리고, 성씨 吳를 水(다수설)로 넣으면 吳 → 垠은 土克水입니다.<br>
+      초판의 "세 층위 어디에서도 상극이 발생하지 않습니다"는 자원오행에서 성립하지 않을 수 있어 위처럼 고쳤습니다.
     </div>
   </div>
 
-  <!-- PART 7: 이름과 병오년 궁합 -->
+  <!-- PART 7: 이름과 아이 사주 -->
   <div class="section">
     <div class="section-number">PART 7</div>
-    <h2>이름 ↔ 2026 병오년 궁합 분석</h2>
+    <h2>이름 ↔ 아이 사주 — 출생 시나리오별 조건부 해석</h2>
 
-    <h3>이름이 아이의 오행을 어떻게 보완하는가</h3>
-    <p>2026년 丙午年 11월생 아이의 확정 오행은 火2 · 土1 · 水1이며, <b>金과 木이 부재</b>합니다.</p>
+    <h3>이름의 사주 보완 가치는 출생 시나리오에 따라 달라진다</h3>
+    <p>아이의 사주에서 지금 아는 것은 연·월 겉글자 4자뿐이고, 월주도 출생 시각에 따라 셋 중 하나입니다. 따라서 "이름이 아이의 金을 채운다"처럼 단정하지 않고, 시나리오별로 <b>해석의 방향</b>만 적습니다. 이름의 오행은 사주 오행 개수에 더하지 않습니다.</p>
 
     <table>
-      <thead><tr><th>부족 오행</th><th>이름의 보완</th><th>메커니즘</th></tr></thead>
+      <thead><tr><th>시나리오</th><th>연·월 겉글자 4자</th><th>이름과의 관계 (조건부 해석)</th></tr></thead>
       <tbody>
         <tr>
-          <td><b>金 부재</b></td>
-          <td><span class="tag tag-green">직접 보충 ✓</span></td>
-          <td>吳(金·7획) + 尙(金·8획)이 金 기운을 직접 제공</td>
+          <td><b>戊戌月</b><br><span style="font-size:12px;">입동 전</span></td>
+          <td>火2 土2</td>
+          <td style="text-align:left;">가을·건조, 午戌 반합(火)으로 火가 강해지는 쪽. 水로 조후하고 土·金으로 火 기운을 덜어내는 해석(土는 설기, 金은 소모)에서 이름의 의미가 커질 수 있습니다. 다만 (운해본 발음·尙=金 기준) 이름 두 글자의 水는 획수오행 垠 9뿐이고 자원오행 水는 없습니다(金은 획수 吳·尙, 자원 尙). 해례본 발음(ㅇㅎ=水)이나 尙을 水로 보는 자원오행 이설을 따르면 水가 더 있습니다. 戌 속에는 辛金이 있습니다.</td>
         </tr>
         <tr>
-          <td><b>木 부재</b></td>
-          <td><span class="tag tag-gold">간접 지원 △</span></td>
-          <td>이름에 木 기운은 없으나, 金→水→木 상생 흐름이 잠재적 보완 경로. 일주·시주에서의 직접 보완 기대</td>
+          <td><b>己亥月</b><br><span style="font-size:12px;">입동 후 ~ 대설 전</span></td>
+          <td>火2 土1 水1</td>
+          <td style="text-align:left;">겨울 水旺 — 亥月은 水旺 · 木相 · 金休 · 土囚 · 火死이고 丙은 亥에서 절. '火 과다'는 성립하기 어렵고, 水 추가 필요성이 줄며 오히려 火·木을 보는 해석도 가능합니다. 亥 속에 甲木이 있습니다.</td>
+        </tr>
+        <tr>
+          <td><b>庚子月</b><br><span style="font-size:12px;">대설 후</span></td>
+          <td>火2 金1 水1</td>
+          <td style="text-align:left;">겨울 水旺 구간이라 亥月과 같은 방향으로 재평가가 필요합니다. 子午 충이 있습니다.</td>
         </tr>
       </tbody>
     </table>
+    <p style="font-size:13px; color:var(--text-light);">이름 두 글자(垠·尙)에는 획수·자원·발음 어느 분류법으로도 木이 없습니다(성씨 吳를 木으로 보는 자원오행 이설 제외). 아이 사주에서 木이 실제로 부족한지는 일주·시주와 지장간까지 본 뒤에 판단합니다.</p>
 
-    <h3>火 과잉에 대한 이름의 조절 역할</h3>
-    <p>丙午年은 天干·地支 모두 火로 火 기운이 매우 강합니다. 이름의 오행이 이를 어떻게 조절하는지:</p>
+    <h3>火 조절 해석 — 火가 실제로 강할 때만 해당</h3>
+    <p>초판은 "丙午年 火 과잉을 이름이 단계적으로 분산한다"고 썼습니다. 이 서술은 아이 사주의 火가 실제로 강하다는 것을 전제로 하므로, 아래처럼 조건부로 고쳤습니다.</p>
     <div class="flow">
-      <div class="flow-item"><span class="tag tag-red">火</span> 아이 (丙午)</div>
+      <div class="flow-item"><span class="tag tag-red">火</span> 연주 丙午</div>
       <div class="flow-arrow">→</div>
       <div class="flow-item"><span class="tag tag-gold">土</span> 垠 (자원오행)</div>
       <div class="flow-arrow">→</div>
-      <div class="flow-item"><span class="tag tag-gold">金</span> 尙·吳</div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-item"><span class="tag tag-blue">水</span> 垠 (획수오행)</div>
+      <div class="flow-item"><span class="tag tag-gold">金</span> 尙 (자원오행)</div>
     </div>
-    <p><b>火 → 土(火生土) → 金(土生金) → 水(金生水)</b>: 과도한 火를 垠(土)이 받아서 식히고, 金으로 흘려보낸 뒤 다시 水로 이어지는 연쇄 상생 구조가 형성됩니다. 이름 하나로 火의 과잉을 단계적으로 분산시키는 역할을 합니다.</p>
+    <p><b>火 → 土(火生土) → 金(土生金)</b>: 출생 후 사주에서 火가 강하다고 판단될 경우(예: 戊戌月 출생으로 午戌 반합이 있고 일주·시주도 火를 돕는 경우), 자원오행 垠(土) → 尙(金)의 흐름을 火의 기운을 설기하는 방향으로 풀이할 수 있습니다(해석). 己亥月·庚子月처럼 겨울 水旺에 태어나 火가 약하다고 판단되면 이 풀이는 해당하지 않습니다. 초판의 흐름도는 획수오행(垠 水)과 자원오행을 한 줄에 섞었으므로, 자원오행만 남겼습니다.</p>
 
-    <h3>부모-자녀 기운 연결</h3>
+    <h3>부모 명식과의 관계 (참고, 상징)</h3>
     <div class="grid-2">
       <div class="info-card">
-        <div class="label">아버지(癸水) ↔ 아이</div>
-        <div class="detail" style="color:var(--text);margin-top:8px;">이름의 金(吳·尙)이 <b>金生水</b>로 아버지의 水 기운을 지원. 垠의 획수오행 水도 부자 간 공명.</div>
+        <div class="label">아버지(일간 癸水) — 용신(해석) 金·水</div>
+        <div class="detail" style="color:var(--text);margin-top:8px;">이름의 획수오행에 金(吳 7·尙 8)과 水(垠 9)가 있습니다. 다만 이름이 아버지의 水를 '지원'한다는 초판 서술은 이름의 분류법 오행을 다른 사람의 명식에 이어 붙인 상징적 해석이라 단정하지 않습니다.</div>
       </div>
       <div class="info-card">
-        <div class="label">어머니(甲木) ↔ 아이</div>
-        <div class="detail" style="color:var(--text);margin-top:8px;">垠의 획수오행 水가 <b>水生木</b>으로 어머니의 木을 자양. 이름 안에 모자 간 유대를 깊게 하는 오행 흐름.</div>
+        <div class="label">어머니(일간 甲木) — 용신(해석) 水·木</div>
+        <div class="detail" style="color:var(--text);margin-top:8px;">(운해본 발음·尙=金 기준) 이름 두 글자의 水는 획수오행 垠 9 하나이고(해례본 발음이나 尙=水 이설을 따르면 더 있음), 木은 이름 두 글자(垠·尙)에 어느 분류법으로도 없습니다(성씨 吳를 木으로 보는 자원오행 이설 제외). '모자 간 유대를 깊게 한다'는 초판 서술은 근거가 없어 지웠습니다.</div>
       </div>
     </div>
 
     <div class="alert alert-info">
-      <strong>가족 단위 기운 흐름</strong>
-      金(이름) → 水(아버지·아이 共) → 木(어머니)<br>
-      <b>금생수 → 수생목</b>의 연쇄 상생 구조가 가족 단위로 형성됩니다.
+      <strong>가족 단위 오행 흐름에 대하여</strong>
+      초판의 "金(이름) → 水(아버지·아이) → 木(어머니)" 연쇄 상생은 서로 다른 사람의 명식과 이름의 서로 다른 분류법을 이어 붙인 상징적 서술이라 결론에서 뺐습니다. 이름은 법적 적합성·뜻·실사용성을 먼저 보고, 부모 명식과의 조화는 선택한 해석법을 밝힌 보조 의견으로만 씁니다.
     </div>
   </div>
 
   <!-- PART 8: 종합 평가 -->
   <div class="section">
     <div class="section-number">PART 8</div>
-    <h2>종합 평가</h2>
+    <h2>종합 평가 (출생 전 조건부)</h2>
 
-    <div class="score-row">
-      <div class="score-label">한자 발음 정확성</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:100%; background:linear-gradient(90deg,var(--accent),#e8b94a);"></div></div>
-      <div class="score-value">★★★★★</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">오격 수리</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:100%; background:linear-gradient(90deg,var(--accent),#e8b94a);"></div></div>
-      <div class="score-value">★★★★★</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">삼층 오행 (상극 無)</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:80%; background:linear-gradient(90deg,#81c784,var(--success));"></div></div>
-      <div class="score-value">★★★★☆</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">金 부재 보완</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:100%; background:linear-gradient(90deg,var(--accent),#e8b94a);"></div></div>
-      <div class="score-value">★★★★★</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">火 과잉 조절</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:80%; background:linear-gradient(90deg,#81c784,var(--success));"></div></div>
-      <div class="score-value">★★★★☆</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">어머니-아이 띠 궁합</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:100%; background:linear-gradient(90deg,var(--accent),#e8b94a);"></div></div>
-      <div class="score-value">★★★★★</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">아버지-아이 띠 궁합</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:80%; background:linear-gradient(90deg,#81c784,var(--success));"></div></div>
-      <div class="score-value">★★★★☆</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">가족 삼합 구조</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:100%; background:linear-gradient(90deg,var(--accent),#e8b94a);"></div></div>
-      <div class="score-value">★★★★★</div>
-    </div>
-    <div class="score-row">
-      <div class="score-label">인명용 한자 적격</div>
-      <div class="score-bar-bg"><div class="score-bar" style="width:100%; background:linear-gradient(90deg,var(--accent),#e8b94a);"></div></div>
-      <div class="score-value">★★★★★</div>
-    </div>
+    <p style="font-size:13px; color:var(--text-light);">초판의 별점(★) 평가는 항목별 점수를 매긴 근거가 없어 삭제했습니다. 대신 재현 가능한 <b>사실 확인 항목</b>(✔ 확인 / △ 조건부·확인 필요)과 유파·출생 시나리오에 따라 달라지는 <b>해석 항목</b>을 나눠 적습니다.</p>
+
+    <h3>사실 확인 항목</h3>
+    <table>
+      <thead><tr><th>항목</th><th>판정</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>인명용 한자 등재 (吳·垠·尙)</td><td>✔</td><td style="text-align:left;">Unihan 인명용 표지(대법원 2018 목록). 2024-06-11 시행 확대분은 데이터에 없으므로 출생신고 직전 대법원 조회로 재확인</td></tr>
+        <tr><td>원획 7 · 9 · 8</td><td>✔</td><td style="text-align:left;"><code>inmyeong_hanja.tsv</code>, 세 글자 모두 원획 확인 권장 플래그 없음</td></tr>
+        <tr><td>사격 길흉</td><td>✔</td><td style="text-align:left;">원격 17 · 형격 16 · 이격 15 · 정격 24 모두 吉 (정본 수리표, 3단계)</td></tr>
+        <tr><td>음양 배합</td><td>✔</td><td style="text-align:left;">7·9·8 = 양·양·음 (순양·순음 아님)</td></tr>
+        <tr><td>정격 24 조건</td><td>✔</td><td style="text-align:left;">사격 모두 吉인 은·상 조합은 획수 쌍 9·8뿐(吳垠尙·吳垠牀·吳垠狀). '어느 격이든 24'로 보면 69개라 유일하지 않음</td></tr>
+        <tr><td>발음오행 상극</td><td>✔ 없음</td><td style="text-align:left;">운해본 土·土·金, 해례본 水·水·金</td></tr>
+        <tr><td>자형 (尙)</td><td>△</td><td style="text-align:left;">U+5C19로 입력·신고해야 함 (尚 U+5C1A 아님)</td></tr>
+        <tr><td>사용 통계</td><td>✔</td><td style="text-align:left;">'은상' 2008–2019 남 375 / 여 45 (남아 약 89%)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>해석 항목</h3>
+    <table>
+      <thead><tr><th>항목</th><th>현재 판단</th><th>설명</th></tr></thead>
+      <tbody>
+        <tr><td>아이 사주 보완</td><td>△ 출생 후 재평가</td><td style="text-align:left;">戊戌月이면 水 조후·土 설기(金은 소모) 해석의 의미가 커지고, 己亥·庚子月(水旺)이면 줄어드는 쪽</td></tr>
+        <tr><td>자원오행 흐름</td><td>△</td><td style="text-align:left;">垠(土) → 尙(金) 土生金. 尙의 자원오행이 金/水로 갈려 불확실</td></tr>
+        <tr><td>띠·부모 관계</td><td>참고</td><td style="text-align:left;">寅午戌, 木生火 등은 겉글자·띠의 상징적 비교</td></tr>
+        <tr><td>뜻·어감</td><td>가족 판단</td><td style="text-align:left;">垠 원뜻 '땅가장자리·끝·지경', 銀賞과 같은 소리</td></tr>
+      </tbody>
+    </table>
 
     <div class="big-result">
-      <div class="label">종합 평가</div>
-      <div class="value">★★★★☆+</div>
-      <div class="sub">수리 최상급 · 오행 양호 · 삼합 가족 · 실용적 리스크 없음</div>
+      <div class="label">종합 (출생 전 조건부)</div>
+      <div class="value" style="font-size:26px;">사격 모두 吉 · 인명용 등재 확인</div>
+      <div class="sub">사주 보완 가치는 월주·일주·시주가 정해진 뒤 재평가</div>
     </div>
   </div>
 
@@ -689,122 +761,110 @@
     <div class="section-number">PART 9</div>
     <h2>향후 주의사항 및 권고</h2>
 
-    <h3>1. 木(목) 부족 보완 — 가장 중요한 포인트</h3>
-    <div class="alert alert-danger">
-      <strong>아이의 확정 오행에 木이 없습니다</strong>
-      아버지(木 0) + 아이 확정분(木 0)으로, 부자 모두 木이 부족합니다. 어머니만 木 2를 보유합니다. 이름(吳垠尙)에도 木 기운이 직접적으로 포함되어 있지 않으므로, 다음 방법으로 木을 보충하는 것을 권장합니다.
+    <h3>1. 木에 대하여 — 출생 후 확인</h3>
+    <div class="alert alert-warning">
+      <strong>"아이에게 木이 없다"는 아직 말할 수 없습니다</strong>
+      木 0은 연·월 겉글자 4자만 센 값입니다. 己亥月이면 亥 속에 甲木이 있고, 일주·시주 4자는 아직 모릅니다. 이름 두 글자(垠·尙)에는 획수·자원·발음 어느 분류법으로도 木이 없지만(성씨 吳를 木으로 보는 자원오행 이설 제외), 아이 사주에서 木이 실제로 부족한지는 출생 후 판단합니다.
     </div>
 
-    <h4>일주·시주에서의 보완 (출생 후 확인)</h4>
-    <p>아이가 태어나면 정확한 출생일시를 기록하여 일주·시주를 확인하시기 바랍니다. 일주나 시주에 甲·乙(천간)이나 寅·卯(지지)가 들어오면 木이 자연스럽게 보완됩니다.</p>
+    <h4>일주·시주 확인 (출생 후)</h4>
+    <p>아이가 태어나면 출생 일시를 기록해 <code>saju_calc.py</code>로 일주·시주를 계산합니다. 일주·시주에 甲·乙(천간)이나 寅·卯(지지)가 있는지, 지장간까지 포함해 木의 상태를 봅니다.</p>
 
-    <h4>좋은 출생 시간대 (木 기운)</h4>
-    <div class="grid-2">
-      <div class="alert alert-success" style="margin:4px 0;">
-        <strong>寅時 (03:00~05:00)</strong>
-        寅 = 木 기운. 寅午戌 삼합을 완성하는 시간대로, 木이 보충되면서 삼합까지 갖춰지는 최상의 시주.
-      </div>
-      <div class="alert alert-success" style="margin:4px 0;">
-        <strong>卯時 (05:00~07:00)</strong>
-        卯 = 木 기운. 순수한 木이 추가되어 오행 균형이 크게 개선됨.
-      </div>
-    </div>
-
-    <h4>유의할 출생 시간대</h4>
-    <div class="grid-2">
-      <div class="alert alert-warning" style="margin:4px 0;">
-        <strong>午時 (11:00~13:00)</strong>
-        午 = 火. 이미 강한 火가 더해져 火 과잉 심화. 다만 이름의 金·土가 어느 정도 제어.
-      </div>
-      <div class="alert alert-warning" style="margin:4px 0;">
-        <strong>子時 (23:00~01:00), 亥時 (21:00~23:00)</strong>
-        水가 추가. 월령 기준으로 가족 전체가 水 부족이므로 오히려 긍정적일 수 있음.
-      </div>
-    </div>
-
-    <h4>생활 속 木 보완 방법</h4>
-    <p>만약 일주·시주에서도 木이 오지 않는다면, 생활 속에서 보완할 수 있습니다:</p>
+    <h4>출생 시간대에 대하여</h4>
     <div class="alert alert-info">
-      <strong>木 기운을 높이는 방법</strong>
-      • <b>색상:</b> 초록색 계열 의류, 소품 활용<br>
-      • <b>방위:</b> 동쪽 방향을 선호 (아이 방 배치 등)<br>
-      • <b>계절:</b> 봄(木의 계절)에 야외 활동 적극 권장<br>
-      • <b>식물:</b> 아이 방에 관엽식물 배치 (생목의 기운)<br>
-      • <b>취미:</b> 성장 후 목공예, 등산, 원예 등 木 관련 활동 권장<br>
-      • <b>숫자:</b> 3, 8 (木의 숫자)을 일상에서 활용
+      <strong>출생 시간대별 유불리는 제시하지 않습니다</strong>
+      초판의 '좋은 출생 시간대(寅·卯時)', '유의할 출생 시간대(午時 등)'는 삭제했습니다. 아이 일간이 미정이라 시간대의 유불리를 판단할 근거가 없고, 프로젝트의 다른 문서는 辰·巳時를 추천하는 등 서로 맞지도 않았습니다. <b>분만 시기·방식은 의료진의 임상 판단에 따르며, 사주를 이유로 출생 시각을 고르지 않습니다.</b>
+    </div>
+
+    <h4>(참고) 木이 약하다고 판단될 때의 전통 생활 관습</h4>
+    <p>출생 후 사주를 계산해 木이 약하다고 판단되는 경우, 전통적으로 다음과 같은 생활 관습을 권하기도 합니다. 민속적 관습이며 효과가 검증된 방법은 아닙니다.</p>
+    <div class="alert alert-info">
+      <strong>전통적으로 木 기운과 연결하는 것들</strong>
+      • <b>색상:</b> 초록색 계열<br>
+      • <b>방위:</b> 동쪽<br>
+      • <b>계절:</b> 봄(木의 계절) 야외 활동<br>
+      • <b>식물:</b> 관엽식물<br>
+      • <b>숫자:</b> 3, 8 (하도(河圖) 기준 木의 수 — 획수오행 끝자리 배속과는 다른 체계)
     </div>
 
     <h3>2. 출생 시각 반드시 기록</h3>
-    <p>아이가 태어나면 <b>정확한 출생 시각(분 단위)</b>을 기록해두시기 바랍니다. 시주(時柱)는 사주의 마지막 기둥으로, 오행 균형의 최종 퍼즐 조각입니다. 특히 위에서 언급한 木 보완 여부를 확인하려면 시주 확인이 필수입니다.</p>
+    <p>아이가 태어나면 <b>출생 시각을 분 단위로</b>(절입 전후라면 초까지) 기록하고, 출생지(병원 소재지)도 함께 적습니다. 시주·일주는 출생 후 <code>saju_calc.py</code>로 계산합니다.</p>
+    <p style="font-size:13px; color:var(--text-light);">
+      • 시지 경계는 KST 30분 보정(동경 127.5° 지방평균시) 기준입니다: 子 23:30~01:29, 丑 01:30~03:29 … 戌 19:30~21:29, 亥 21:30~23:29. 경계 근처 출생이면 계산기가 보여 주는 대안 간지도 함께 적습니다.<br>
+      • 일주는 정자시법(子時 시작에 날짜 변경)이라 23:30 이후 출생은 <b>다음 날 일주</b>를 씁니다. 당일 일주를 유지하는 야자시 유파도 있어 계산기가 대안을 함께 보여 줍니다.<br>
+      • 균시차(진태양시)는 적용하지 않습니다. 동경 127.5° 기준 11월 상·중순 진태양시는 KST −14~16분 정도(하순 −16~19분)로, 일괄 30분 보정과 차이가 납니다.
+    </p>
 
     <h3>3. 출생신고 시 한자 주의</h3>
     <div class="alert alert-info">
       <strong>정확한 한자 기재 필수</strong>
-      • <b>垠</b> — 土변(土)에 艮(그칠 간). "언덕 은"으로 훈독. 인명용 한자 등록 확인 완료.<br>
-      • <b>尙</b> — 정자(正字) 8획. 尚(속자)과 구별 주의. 반드시 <b>尙</b>을 사용.<br>
-      • <b>吳</b> — 7획 정자 그대로 사용.
+      • <b>垠</b> (U+57A0) — 土 + 艮. 훈 '땅가장자리 은'. 인명용 등재(Unihan 2018 목록 기준) — 출생신고 직전 대법원 조회로 재확인.<br>
+      • <b>尙</b> (U+5C19) — 원획 8. 모양이 비슷한 尚(U+5C1A)은 중국·일본 자형이므로 쓰지 않습니다. 반드시 <b>尙(U+5C19)</b>을 사용.<br>
+      • <b>吳</b> (U+5433) — 원획 7.
     </div>
 
-    <h3>4. 아버지와 아이의 火 중첩 관리</h3>
-    <p>아버지(庚午, 말띠)와 아이(丙午, 말띠)는 같은 午(말)를 공유하여 火 기운이 강하게 겹칩니다. 이는 열정과 추진력이라는 장점이 있지만, 성격 충돌의 가능성도 있습니다. 부자 관계에서 서로의 의견을 존중하고, 水(유연함)와 木(성장)의 기운을 의식적으로 활용하면 건강한 관계를 유지할 수 있습니다.</p>
+    <h3>4. 아버지와 아이의 같은 띠(午)</h3>
+    <p>아버지(庚午年)와 아이(丙午年)는 같은 午띠입니다. 연지 午가 겹친다는 것은 겉글자 비교일 뿐이며, 부자 관계나 성격을 정하지 않습니다. 초판의 '火 중첩 관리'와 '성격 충돌 가능성' 서술은 근거가 없어 삭제했습니다.</p>
 
-    <h3>5. 출생월 변동 시</h3>
+    <h3>5. 출생 시기 변동 시</h3>
     <table>
-      <thead><tr><th>출생월</th><th>월주</th><th>특징</th><th>이름 적합도</th></tr></thead>
+      <thead><tr><th>출생 구간 (KST)</th><th>월주</th><th>연·월 겉글자 4자</th><th>이름과의 관계 (조건부)</th></tr></thead>
       <tbody>
         <tr>
-          <td><b>10월</b></td><td>戊戌</td>
-          <td>土 과다, 金 부재 동일</td>
-          <td><span class="tag tag-green">양호</span> — 이름의 金이 보완</td>
+          <td><b>10-08 15:29 ~ 11-07 18:52</b><br><span style="font-size:12px;">입동 전 (11월 초 포함)</span></td><td>戊戌</td>
+          <td>火2 土2</td>
+          <td style="text-align:left;">午戌 반합(火)·건조. 水 조후·土 설기(金은 소모) 해석의 의미가 커지는 쪽 ((운해본 발음·尙=金 기준) 이름 두 글자의 水는 획수오행 垠 9뿐)</td>
         </tr>
         <tr style="background: var(--accent-light);">
-          <td><b>11월 ★</b></td><td>己亥</td>
-          <td>土+水, 金·木 부재</td>
-          <td><span class="tag tag-green" style="background:#065f46;color:#fff;">최적</span> — 金 보완 + 水 지원</td>
+          <td><b>11-07 18:52 ~ 12-07 11:53</b><br><span style="font-size:12px;">입동 후 ~ 대설 전</span></td><td>己亥</td>
+          <td>火2 土1 水1</td>
+          <td style="text-align:left;">겨울 水旺, 丙 절. 水 추가 필요성이 줄고 火·木을 보는 해석도 가능 — 재평가</td>
         </tr>
         <tr>
-          <td><b>12월</b></td><td>庚子</td>
-          <td>金+水 추가, 火 과잉 제어</td>
-          <td><span class="tag tag-green">양호</span> — 金이 자연 보충됨</td>
+          <td><b>12-07 11:53 이후</b><br><span style="font-size:12px;">대설 후</span></td><td>庚子</td>
+          <td>火2 金1 水1</td>
+          <td style="text-align:left;">겨울 水旺, 子午 충. 己亥月과 같은 방향으로 재평가</td>
         </tr>
       </tbody>
     </table>
-    <p>어느 달에 태어나더라도 사격(수리)은 변하지 않으므로 이름 자체를 변경할 필요는 없습니다.</p>
+    <p>예정일이 11월이어도 11-07 18:52 이전에 태어나면 戊戌月입니다. 사격(수리)은 획수로만 정해지므로 언제 태어나도 변하지 않습니다. 달라지는 것은 이름의 사주 보완 가치에 대한 해석이며, 이는 출생 후 다시 평가합니다. 초판의 '최적·양호' 등급은 근거가 없어 지웠습니다.</p>
 
     <h3>6. 장기적 관점</h3>
-    <p>오은상(吳垠尙)은 <b>초년(16획 덕망격)</b>부터 <b>말년(15획 복수격)</b>까지 모든 시기에 걸쳐 길한 운을 갖추고 있습니다. 어린 시절 인덕으로 기반을 다지고(16 덕망) → 중년에 독립적 성취를 이루며(17 건창) → 말년에 복과 장수를 누리는(15 복수) 이상적인 생애 흐름이며, 총운(24 입신)이 재물과 출세를 모두 아우릅니다.</p>
+    <p>새 공식으로 보면 오은상(吳垠尙)은 <b>초년(원격 17 건창격)</b> · <b>청장년(형격 16 덕망격)</b> · <b>중년(이격 15 통솔격)</b> · <b>총운(정격 24 입신격)</b>이 모두 吉수입니다. 전통 풀이로는 의지(17 건창) → 덕망(16 덕망) → 통솔(15 통솔)로 이어지고, 총운은 24 입신격(맨손으로 입신)으로 풀이되는 배열입니다. 이는 성명학의 전통 해석이며 생애를 예언하는 것이 아닙니다.</p>
   </div>
 
   <!-- CONCLUSION -->
   <div class="section" style="background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; border: none;">
-    <h2 style="color: var(--accent); border-color: rgba(201,169,110,0.3);">최종 결론</h2>
+    <h2 style="color: var(--accent); border-color: rgba(201,169,110,0.3);">결론 (출생 전 조건부)</h2>
     <div style="text-align:center; padding: 20px 0;">
-      <div style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 8px;">추천 이름</div>
+      <div style="font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 8px;">후보 이름</div>
       <div style="font-family:'Noto Serif KR',serif; font-size: 48px; font-weight: 900; color: var(--accent); letter-spacing: 16px; margin-bottom: 8px;">오 은 상</div>
       <div style="font-size: 26px; color: rgba(255,255,255,0.8); letter-spacing: 10px; margin-bottom: 24px;">吳 垠 尙</div>
       <div style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 2;">
-        획수 배합 <b style="color:var(--accent);">7 · 9 · 8</b> &nbsp;|&nbsp;
-        정격 <b style="color:var(--accent);">24획 입신격</b> &nbsp;|&nbsp;
-        사격 전부 <b style="color:var(--accent);">길수</b><br>
+        원획 <b style="color:var(--accent);">7 · 9 · 8</b> &nbsp;|&nbsp;
+        원17 · 형16 · 이15 · 정24 &nbsp;|&nbsp;
+        사격 모두 <b style="color:var(--accent);">吉</b><br>
         2026 丙午年 <b style="color:var(--accent);">말띠</b> &nbsp;|&nbsp;
-        가족 <b style="color:var(--accent);">寅午戌 삼합</b> &nbsp;|&nbsp;
-        金 보완 <b style="color:var(--accent);">완료</b>
+        사주 보완 가치: <b style="color:var(--accent);">출생 후 재평가</b>
       </div>
       <div style="margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.5);">
-        대지의 끝(垠)까지 높은 뜻(尙)을 품고 나아가는 아이
+        땅끝(垠)까지 높이 받들어지다(尙) — 작명 풀이
       </div>
       <div style="margin-top: 12px; font-size: 13px; color: rgba(255,255,255,0.35);">
-        ※ 출생 후 일주·시주 확인 → 木 보완 여부 최종 점검 필요
+        ※ 출생 후 월주(절입 시각)·일주·시주 확정 → 사주 적합도 재평가<br>
+        ※ 출생신고 직전 대법원 인명용 한자 조회로 垠(U+57A0)·尙(U+5C19)의 자형·지정 발음 재확인
       </div>
     </div>
   </div>
 
   <!-- Footer -->
   <div class="footer">
-    <p>본 보고서는 성명학·사주명리학·음양오행론에 기반하여 작성되었습니다.</p>
-    <p>부모 사주: 척척만세력 교차검증 완료 (아버지·어머니 모두)</p>
-    <p>오격 전수 탐색: "오은상" 발음 내 입신격 포함 사격대길 조합은 吳垠尙이 유일함을 검증</p>
-    <p style="margin-top: 12px; color: #aaa;">— 작성: AI 작명 분석 시스템 · 2026년 3월 —</p>
+    <p>본 보고서는 성명학·사주명리학·음양오행론의 전통 해석에 기반합니다. 길흉·오행 평가는 해석이며, 이름이 건강·재물·성격을 결정한다는 뜻이 아닙니다.</p>
+    <p>사주 계산: <code>skills/korean-naming/scripts/saju_calc.py</code> — 부모 연·월·일주는 sxtwl·JDN·KASI 음력(korean_lunar_calendar) 3중 계산으로 재검증, 부모 시주는 출생 시각 미상으로 제외(삼주 기준). 절입·일진표: <code>skills/korean-naming/references/daily_pillars_2026.md</code> (<code>gen_daily_pillars.py</code>로 생성)</p>
+    <p>수리: <code>skills/korean-naming/references/suri_table.md</code> (3단계) · 원획: <code>skills/korean-naming/data/inmyeong_hanja.tsv</code> (Unihan 인명용 2018 목록 기준)</p>
+    <p>전수 탐색: <code>docs/전수탐색/오은상_조합표.md</code> — <code>name_search.py</code>로 재생성 가능 (은 34자 × 상 43자 = 1,462개 조합, 사격 모두 吉 182개)</p>
+    <p>이 보고서에는 부모 생년월일과 전해진 출생 시간대가 실려 있으므로, 외부에 공유할 때는 개인정보를 지운 공유본을 씁니다.</p>
+    <p style="margin-top: 12px; color: #aaa;">— 작성: AI 작명 분석 시스템 · 초판 2026년 3월 · 개정 2026-10-01 —</p>
   </div>
 
 </div>
