@@ -45,8 +45,11 @@ Unihan(@mandel59/mojidata 의 moji.db)에서 대법원 인명용 한자(kHangul 
                              娜 9→10, 健 10→11). 강희 기준 K 를 쓴다. 단, 부수가
                              老(125)인데 耂(4획)로 쓰인 글자는 耂 를 4획으로 센다
                              (耂 는 원획 환산 관행 대상이 아니다).
-        total-gt-rs-check    T > K: 대만 자형 등으로 T 가 큰 경우(예: 成, 盛, 興).
-                             T 를 쓰고 확인 표시.
+        total-gt-rs-check    T > K: 대만 자형 등으로 T 가 큰 경우(예: 成, 興, 紫).
+                             기본은 T 를 쓰고 확인 표시. 단 강희자전(kKangXi)과
+                             대자원(kDaeJaweon) 배열 위치가 **둘 다** 그 글자를 같은
+                             부수·같은 나머지 획수(=K) 구간의 실제 수록자로 두면 강희 원획
+                             원칙에 따라 K 를 쓴다(플래그 |kx-dj-confirm, 확인 표시 유지).
       강희자전 위치 보정(kKangXi): kKangXi 는 강희자전 쪽·자리 번호다. 강희자전은
       부수→나머지 획수 순으로 배열되므로, 실제 수록자(끝자리 0) 가운데 RS 값이 하나뿐인
       약 4만 자를 참조열로 삼아 앞뒤 이웃 4자씩의 최빈 부수·나머지 획수로 그 글자가
@@ -55,18 +58,34 @@ Unihan(@mandel59/mojidata 의 moji.db)에서 대법원 인명용 한자(kHangul 
           睡 109.8). 맞는 후보가 둘 이상이면 원획이 큰 쪽.
         - 확정 구간의 나머지 획수가 유니코드 값보다 크면 강희 값을 쓴다(예: 城 6→7,
           誠 6→7, 著 8→9). 원획은 전통 자형 기준이라 큰 쪽이 맞는 경우가 많기 때문이다.
-        - 강희 구간이 유니코드 값보다 작으면 값은 바꾸지 않고 플래그만 남긴다
-          (예: 姬, 熙 — 옥편마다 9/10, 13/14 로 갈림).
+        - 그 밖에 강희 구간이 쓰인 나머지 획수를 벗어나면(대개 강희 쪽이 더 작음,
+          또는 더 크지만 구간이 한 값으로 확정되지 않음) 값은 바꾸지 않고 플래그만
+          남긴다(예: 姬 — 유니코드 총획 10, 강희·대자원 배열 위치로는 9 구간).
+          이 플래그도 확인 권장이다.
+      대자원 위치 교차 확인(kDaeJaweon): 『大字源』(동아출판사, 한국 자전)의 쪽·자리 번호도
+      같은 방식(부수→나머지 획수 배열)으로 구간을 추정해 교차 확인에 쓴다.
+        - 위 total-gt-rs-check 의 K 채택 조건(강희·대자원 모두 K 구간).
+        - 쓰인 나머지 획수가 대자원 구간 밖이면 |dj-pos:<부수>.<lo>[-<hi>] 를 남긴다
+          (정보용. 위치 추정에는 잡음이 있어 이것만으로 확인 권장을 붙이지 않는다).
+      육달월(月=肉) 위치(ids 표): 부수 肉(130)을 정자 6획으로 환산한 글자 가운데
+      月 이 왼쪽 변(⿰月□)에 있지 않은 글자(예: 胤, 育, 胡, 背)는 환산 관행이 갈릴 수
+      있으므로 |meat-moon-not-left 를 붙이고 확인 권장으로 센다(값은 바꾸지 않음).
+      IDS 는 한국(K) 출처 자형을 우선한다.
       덧붙는 플래그:
         |rs-by-kangxi-pos:<RS>     대표가 아닌 RS 후보를 강희 위치로 고름
         |multi-rs:<RS>=<값>        고르지 않은 RS 후보로 계산하면 원획이 달라짐
         |kangxi-pos-residual:a>b   강희 위치로 나머지 획수를 a 에서 b 로 올림
-        |kangxi-pos:<부수>.<lo>[-<hi>]  강희 위치 추정과 쓰인 나머지 획수가 다름(정보용)
+        |kangxi-pos:<부수>.<lo>[-<hi>]  강희 위치 추정과 쓰인 나머지 획수가 다름(확인 권장)
         |component-kangxi-diff     약자 부수 환산분보다 K-T 가 큰 경우(성분 획수 차이)
+        |kx-dj-confirm             강희·대자원 위치가 모두 K 를 지지해 T 대신 K 를 씀
+        |dj-pos:<부수>.<lo>[-<hi>] 대자원 위치 추정과 쓰인 나머지 획수가 다름(정보용)
+        |meat-moon-not-left        月(肉)이 왼쪽 변이 아닌데 肉 6획으로 환산함
         |total-variants:a/b        kTotalStrokes 값이 여러 개로 갈릴 때
         |simplified-radical        쓰인 부수가 간화 자형(아포스트로피)일 때
     radical_no/residual 열은 원획 계산에 실제로 쓴 값이다(플래그로 원래 값 확인).
-    플래그가 붙은 행은 출생신고 전 옥편/대법원 자료로 획수를 다시 확인한다.
+    wonhoek_check 열(Y/N)은 옥편 대조 권장 여부다(CHECK_RULES·CHECK_FLAGS 기준).
+    name_search.py 는 이 열을 그대로 읽는다. Y 인 글자는 출생신고 전 옥편/대법원
+    자료로 획수를 다시 확인한다.
 
 획수오행(hoek_ohaeng): 원획 끝자리 1,2 木 / 3,4 火 / 5,6 土 / 7,8 金 / 9,0 水.
 
@@ -169,13 +188,17 @@ KNOWN_WONHOEK = (
     "道16 英11 浩11 珍10 祐10 福14 裕13 育10 郁13 陽17 都16"
 )
 
+# 후보 글자: 확인 권장 플래그가 없어야 함 / 반드시 붙어야 하는 플래그
+FOCUS_NO_CHECK = "吳垠尙昀河沇"
+FOCUS_FLAGS = (("胤", "meat-moon-not-left"), ("姬", "kangxi-pos"))
+
 COLUMNS = [
     "hanja", "codepoint", "inmyeong_readings", "all_readings", "education",
     "koreanname_year", "radical_no", "radical_simplified", "residual",
     "unicode_total_strokes", "wonhoek", "wonhoek_rule", "hoek_ohaeng",
     "radical_ohaeng", "definition_en",
     # 추가 열
-    "radical_char", "dueum_readings", "khangul_raw", "hun",
+    "radical_char", "dueum_readings", "khangul_raw", "hun", "wonhoek_check",
 ]
 
 _RS_RE = re.compile(r"^(\d+)('*)\.(-?\d+)$")
@@ -228,18 +251,24 @@ def rs_value(n, residual):
 
 
 class KangxiIndex:
-    """강희자전 위치(kKangXi)로 부수·나머지 획수 구간을 추정한다."""
+    """자전 배열 위치(kKangXi 또는 kDaeJaweon)로 부수·나머지 획수 구간을 추정한다.
+
+    두 자전 모두 부수→나머지 획수 순으로 배열되고, Unihan 위치값의 끝자리는
+    실제 수록자면 0, 수록되지 않아 사이에 끼워 넣은 가상 위치면 0이 아니다."""
 
     WINDOW = 4
 
     def __init__(self, kangxi, rs_tab):
         refs = []
         self.pos = {}
+        self.real = set()
         for ch, value in kangxi.items():
             key = self._key(value)
             if key is None:
                 continue
             self.pos[ch] = key[:2]
+            if key[2] == 0:
+                self.real.add(ch)
             toks = rs_tab.get(ch, "").split()
             if key[2] != 0 or len(toks) != 1 or "'" in toks[0]:
                 continue
@@ -301,8 +330,18 @@ def choose_rs(rs_list, sec):
     return max(pool, key=lambda c: (rs_value(c[0], c[2]), -rs_list.index(c)))
 
 
-def compute_wonhoek(ch, rs_list, totals, sec=None):
-    """returns (wonhoek, rule_string, (radical, simplified, residual))"""
+def _confirms(sec, n, res):
+    """자전 구간 추정이 부수 n·나머지 획수 res 하나로 확정되는가."""
+    return sec is not None and sec[0] == n and sec[1] == sec[2] == res
+
+
+def compute_wonhoek(ch, rs_list, totals, sec=None, dsec=None, both_real=False,
+                    meat_left=None):
+    """returns (wonhoek, rule_string, (radical, simplified, residual))
+
+    sec  = 강희자전 구간 추정, dsec = 대자원 구간 추정(KangxiIndex.section),
+    both_real = 두 자전 모두 실제 수록 위치인가, meat_left = 月(肉)이 왼쪽 변인가
+    (부수 130 글자만 의미가 있음; None 이면 판단 불가)."""
     t0, tmax = totals[0], max(totals)
     chosen = choose_rs(rs_list, sec)
     n, simp, res, tok = chosen
@@ -343,6 +382,17 @@ def compute_wonhoek(ch, rs_list, totals, sec=None):
             value, rule = k, "kangxi-sum"
         else:
             value, rule = tmax, "total-gt-rs-check"
+            # 강희자전·대자원이 모두 K 구간의 실제 수록자로 두면 강희 원획(K)을 쓴다.
+            if both_real and _confirms(sec, n, res) and _confirms(dsec, n, res):
+                value = k
+                flags.append("kx-dj-confirm")
+
+    if rule == "radical-full" and n == 130 and not meat_left:
+        flags.append("meat-moon-not-left")
+    if dsec is not None and dsec[0] == n and not fixed and res >= 0:
+        dlo, dhi = min(dsec[1], dsec[2]), max(dsec[1], dsec[2])
+        if not (dlo <= res <= dhi):
+            flags.append("dj-pos:%d.%s" % (n, dlo if dlo == dhi else "%d-%d" % (dlo, dhi)))
 
     for alt in rs_list:
         if alt is chosen:
@@ -355,6 +405,19 @@ def compute_wonhoek(ch, rs_list, totals, sec=None):
     if simp:
         flags.append("simplified-radical")
     return value, "|".join([rule] + flags), (n, simp, res)
+
+
+MOON_FORMS = set("月⺼⺝肉")
+
+
+def meat_moon_left(ids_list):
+    """IDS 목록 [(source, ids)] → 月(肉)이 왼쪽 변인가. 한국(K) 출처 자형 우선.
+    ⿰ 또는 ⿲ 의 첫 성분이 月·⺼·⺝·肉 이면 왼쪽으로 본다. IDS 가 없으면 None."""
+    if not ids_list:
+        return None
+    pref = [i for src, i in ids_list if "K" in src] or [i for _src, i in ids_list]
+    ids = pref[0]
+    return len(ids) > 1 and ids[0] in "⿰⿲" and ids[1] in MOON_FORMS
 
 
 def load_hun(path):
@@ -403,12 +466,17 @@ def build(mojidb, hun_path=None):
     ts_tab = table("unihan_kTotalStrokes")
     defs = table("unihan_kDefinition")
     kangxi = table("unihan_kKangXi")
+    daejaweon = table("unihan_kDaeJaweon")
     radical_chars = dict(con.execute(
         "SELECT radical_number, radical_CJKUI FROM radicals "
         "WHERE radical_simplified = 0"))
+    ids_tab = {}
+    for ucs, src, ids in con.execute("SELECT UCS, source, IDS FROM ids ORDER BY rowid"):
+        ids_tab.setdefault(ucs, []).append((src, ids))
     con.close()
 
     kx_index = KangxiIndex(kangxi, rs_tab)
+    dj_index = KangxiIndex(daejaweon, rs_tab)
     hun_table = load_hun(hun_path) if hun_path else {}
 
     rows = []
@@ -421,7 +489,9 @@ def build(mojidb, hun_path=None):
         rs_list = parse_rs(rs_tab[ch])
         totals = [int(t) for t in ts_tab[ch].split()]
         wonhoek, rule, (n, simp, res) = compute_wonhoek(
-            ch, rs_list, totals, kx_index.section(ch))
+            ch, rs_list, totals, kx_index.section(ch), dj_index.section(ch),
+            both_real=(ch in kx_index.real and ch in dj_index.real),
+            meat_left=meat_moon_left(ids_tab.get(ch)))
         dueum_list = []
         for r in inm:
             d = dueum(r)
@@ -447,6 +517,8 @@ def build(mojidb, hun_path=None):
             "dueum_readings": ",".join(dueum_list),
             "khangul_raw": khangul[ch],
             "hun": clean(hun_for(ch, inm, hun_table)),
+            "wonhoek_check": "Y" if needs_check(rule) else "N",
+            "_djsec": dj_index.section(ch),
         })
     return rows
 
@@ -460,10 +532,17 @@ def write_tsv(rows, out):
             w.writerow([row[c] for c in COLUMNS])
 
 
-# 옥편 대조를 권하는 규칙·플래그 (kangxi-sum, component-kangxi-diff 는 정보성)
+# 옥편 대조를 권하는 규칙·플래그. 정보용(확인 권장에 넣지 않음): kangxi-sum 규칙,
+# component-kangxi-diff·dj-pos 플래그. wonhoek_check 열과 data/README.md 4절이 이 기준이다.
 CHECK_RULES = {"total-gt-rs-check", "radical-variant-check", "radical-itself-check", "override"}
 CHECK_FLAGS = {"multi-rs", "rs-by-kangxi-pos", "kangxi-pos-residual", "kangxi-pos",
-               "total-variants", "simplified-radical"}
+               "meat-moon-not-left", "total-variants", "simplified-radical"}
+INFO_FLAGS = {"component-kangxi-diff", "dj-pos", "kx-dj-confirm"}
+
+
+def needs_check(rule):
+    parts = rule.split("|")
+    return parts[0] in CHECK_RULES or any(f.split(":")[0] in CHECK_FLAGS for f in parts[1:])
 
 
 def report(rows, out=sys.stderr):
@@ -483,11 +562,37 @@ def report(rows, out=sys.stderr):
             flag_counts[f] = flag_counts.get(f, 0) + 1
         if base not in ("unicode-total", "radical-full", "numeral-meaning") or flags:
             flagged += 1
-        if base in CHECK_RULES or any(f in CHECK_FLAGS for f in flags):
+        if r["wonhoek_check"] == "Y":
             check += 1
     print("rules=" + ", ".join("%s:%d" % kv for kv in sorted(rules.items())), file=out)
     print("flags=" + ", ".join("%s:%d" % kv for kv in sorted(flag_counts.items())), file=out)
     print("flagged(any)=%d check-recommended=%d" % (flagged, check), file=out)
+
+    def chars_with(flag):
+        return "".join(r["hanja"] for r in rows
+                       if any(f.split(":")[0] == flag for f in r["wonhoek_rule"].split("|")[1:]))
+    print("kx-dj-confirm (T 대신 K): " + " ".join(
+        "%s%s" % (r["hanja"], r["wonhoek"]) for r in rows
+        if "|kx-dj-confirm" in r["wonhoek_rule"]), file=out)
+    print("meat-moon-not-left: " + chars_with("meat-moon-not-left"), file=out)
+    # 강희 위치로 나머지 획수를 바꾼 행이 대자원 위치와 맞는지
+    for flag in ("kangxi-pos-residual", "rs-by-kangxi-pos", "kangxi-pos"):
+        stat = {}
+        for r in rows:
+            parts = r["wonhoek_rule"].split("|")
+            if not any(f.split(":")[0] == flag for f in parts[1:]):
+                continue
+            d = r["_djsec"]
+            if d is None or d[0] != int(r["radical_no"]):
+                k = "dj-none"
+            elif any(f.startswith("dj-pos") for f in parts[1:]):
+                k = "dj-disagree"
+            elif d[1] == d[2]:
+                k = "dj-agree"
+            else:
+                k = "dj-agree-range"
+            stat[k] = stat.get(k, 0) + 1
+        print("dj-crosscheck %s: %s" % (flag, ", ".join("%s:%d" % kv for kv in sorted(stat.items()))), file=out)
 
     mismatches = 0
     for tok in KNOWN_WONHOEK.split():
@@ -502,6 +607,17 @@ def report(rows, out=sys.stderr):
             mismatches += 1
         elif r["wonhoek_rule"].startswith("override"):
             print("VALIDATE ok-by-override %s=%d (%s)" % (ch, expected, OVERRIDES[ch][1]), file=out)
+    # 후보 글자는 확인 권장 플래그가 없어야 하고, 胤은 육달월 위치 플래그가 있어야 한다.
+    for ch in FOCUS_NO_CHECK:
+        r = by_char.get(ch)
+        if r is None or r["wonhoek_check"] != "N":
+            print("VALIDATE focus-check %s rule=%s" % (ch, r and r["wonhoek_rule"]), file=out)
+            mismatches += 1
+    for ch, flag in FOCUS_FLAGS:
+        r = by_char.get(ch)
+        if r is None or ("|" + flag) not in r["wonhoek_rule"]:
+            print("VALIDATE focus-flag %s missing %s" % (ch, flag), file=out)
+            mismatches += 1
     print("validation mismatches=%d" % mismatches, file=out)
     return mismatches
 
@@ -530,9 +646,11 @@ def main(argv=None):
             print("hun source sha256=%s" % hashlib.sha256(f.read()).hexdigest(), file=sys.stderr)
     rows = build(args.mojidb, args.hun)
     write_tsv(rows, args.out)
-    report(rows)
+    with open(args.out, "rb") as f:
+        print("output sha256=%s" % hashlib.sha256(f.read()).hexdigest(), file=sys.stderr)
+    mismatches = report(rows)
     report_variants(args.mojidb)
-    return 0
+    return 1 if mismatches else 0
 
 
 if __name__ == "__main__":

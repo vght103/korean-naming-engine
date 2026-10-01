@@ -1,0 +1,15 @@
+# korean-naming 스킬 계산 스크립트 의존 패키지 (Python 3.11.15 에서 2026-10-01 검증한 버전)
+#   pip install -r skills/korean-naming/scripts/requirements.txt
+# build_hanja_table.py · name_search.py 는 표준 라이브러리만 쓴다.
+
+# saju_calc.py / gen_daily_pillars.py — 필수
+sxtwl==2.0.7                    # 일진(일주) 이중 계산·월주 대조. 절입 계산의 마지막 대체 수단
+pyerfa==2.0.1.5                 # 절입 순간 정밀 계산(IAU SOFA: epv00, IAU 2006/2000A), 진태양시 참고값 — 기본 계산원
+numpy==2.4.6                    # pyerfa 의존
+korean_lunar_calendar==0.4.0    # 한국 음력(KASI 음양력 자료 기반, 1000-02-13 ~ 2050-12-31)
+
+# 선택 — 절입 시각 교차검증(skyfield + 패키지에 든 DE421). 없으면 selftest [6]을 건너뛰고
+# gen_daily_pillars.py 는 기록해 둔 DE421 값을 쓴다. 천체력 파일을 내려받지 않는다.
+skyfield==1.55
+skyfield-data==7.0.0
+jplephem==2.24
