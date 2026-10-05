@@ -37,6 +37,22 @@ WHITELIST = (
 HUN_FIX = {"潤": "윤택할 윤", "姃": "단정할 정", "玹": "옥빛 현", "采": "캘·풍채 채", "姸": "고울 연"}
 BAN_SYLLABLES = "음흔언"   # 사용자가 뺀 음절
 MIN_TOTAL, MIN_FEMALE = 20, 0.7
+DEFAULT_DISLIKED = os.path.join(HERE, "..", "data", "disliked_names.tsv")
+
+
+def load_disliked(path):
+    """사용자가 마음에 안 든다고 한 이름(두 글자) 집합. # 줄과 머리행은 건너뛴다."""
+    if not path or not os.path.exists(path):
+        return set()
+    out = set()
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            if line.startswith("#") or not line.strip():
+                continue
+            name = line.split("\t")[0].strip()
+            if name and name != "name":
+                out.add(name)
+    return out
 
 
 def build(rows, ctx, a):
@@ -92,12 +108,15 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="오씨와 어울리는 이름 한자표")
     ap.add_argument("--stats", required=True, help="여아csv,남아csv")
     ap.add_argument("--out", default="")
+    ap.add_argument("--disliked", default=DEFAULT_DISLIKED,
+                    help="마음에 안 든다고 한 이름 목록 TSV (이름표에 ✗ 표시, 빈 값이면 표시 안 함)")
     args = ap.parse_args(argv)
     rows = ns.load_table(ns.DEFAULT_TABLE)
     suri, _, _ = ns.load_suri(ns.DEFAULT_SURI, {})
     ctx = ns.Ctx(suri, False)
     a = next(r["wonhoek"] for r in rows if r["hanja"] == "吳")
     stats, _ = cs.load_stats(args.stats)
+    disliked = load_disliked(args.disliked)
     pool, combos = build(rows, ctx, a)
 
     L = ["# 오(吳)씨와 어울리는 이름 한자표", "",
@@ -155,16 +174,21 @@ def main(argv=None):
                "| 이름 | 한자 조합 (숫자 4개 원·형·이·정) | 출생신고 2008–19 여/남 |", "|---|---|---|"]
         for n, f, m, v in rows_:
             mark = " ⓣ" if set(n) & trend else ""
+            x = "✗ " if n in disliked else ""
             opts = " · ".join("%s(吳%s%s) %s" % ("오" + n, cb["row"]["hanja"], cc["row"]["hanja"],
                                                  "·".join(str(s["nums"][k]) for k in ("원", "형", "이", "정")))
                               for cb, cc, s in v[:6])
             more = " 외 %d" % (len(v) - 6) if len(v) > 6 else ""
-            out.append("| **오%s**%s | %s%s | %s / %s |" % (n, mark, opts, more, format(f, ","), format(m, ",")))
+            out.append("| %s**오%s**%s | %s%s | %s / %s |" % (x, n, mark, opts, more, format(f, ","), format(m, ",")))
         return out + [""]
 
     L += ["", "## 5. 이 한자들로 만들 수 있는 실제 여자아이 이름", "",
           "2·3절 한자로 조건을 모두 통과하면서, 2008–2019년 출생신고에 실제로 있는 이름(누적 %d명 이상, 여아 %d%% 이상)입니다. "
           "ⓣ는 요즘 유행 음절(%s)이 들어간 이름입니다." % (MIN_TOTAL, int(MIN_FEMALE * 100), "·".join(cs.DEFAULT_EXCLUDE)), ""]
+    hit = sorted(n for n, *_ in real if n in disliked)
+    if hit:
+        L += ["**✗ = 마음에 안 든다고 한 이름** (`data/disliked_names.tsv`): %s — %d개" % (
+            ", ".join("오" + n for n in hit), len(hit)), ""]
     L += block("흔한 이름 — 3,000명 이상", 3000, 10 ** 9)
     L += block("보통 — 300~2,999명", 300, 3000)
     L += block("드문 이름 — 300명 미만", 0, 300)
